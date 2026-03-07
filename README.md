@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🐒 Monkey Dee Preschool Website
 
 A full-featured React website for a preschool — built with React 18, React Router v6, and custom CSS.
@@ -113,3 +114,7 @@ No component library required — all UI is custom CSS.
 ---
 
 Made with ❤️ for Monkey Dee Preschool 🐒
+=======
+# Crocodile
+Find another key of success because education is not working.
+>>>>>>> 9fa62f11c2ce16f8bce945b557685510eafa4980
