@@ -15,8 +15,7 @@ const curriculum = [
   { icon: "🔢", title: "Math & Logic", desc: "Counting, patterns, shapes, and early algebra through games and manipulatives." },
   { icon: "🔬", title: "Science & Discovery", desc: "Hands-on experiments, nature exploration, and the scientific method." },
   { icon: "🎨", title: "Arts & Expression", desc: "Painting, sculpture, drama, and music to foster creativity and self-expression." },
-  { icon: "🧘", title: "Social-Emotional", desc: "Feelings vocabulary, empathy, conflict resolution, and mindfulness." },
-  { icon: "🏃", title: "Physical Development", desc: "Gross and fine motor skills through outdoor play, yoga, and manipulative activities." },
+ 
 ];
 
 const team = [
@@ -29,12 +28,12 @@ const team = [
 export default function About() {
   return (
     <div className="about-page">
-
+    
       {/* HERO */}
       <section className="about-hero">
         <div className="about-hero-inner">
-          <span className="pill-label">🐒 About Monkey Dee</span>
-          <h1>A School Built on <span>Love</span> & <span>Learning</span></h1>
+           <h1> About</h1><br></br>
+          <h2>A School Built on <span>Love</span> & <span>Learning</span></h2>
           <p>
             Since 2010, Monkey Dee Preschool has been the heart of early childhood education in
             our community — a joyful, safe, and creative space where children aged 2–6 become the
@@ -51,7 +50,7 @@ export default function About() {
       <section className="section mission-section">
         <div className="section-inner mission-grid">
           <div className="mission-text">
-            <span className="pill-label">🎯 Our Mission</span>
+            
             <h2>Empowering Every Child to Shine</h2>
             <p>
               Our mission is to provide an inclusive, stimulating, and joyful learning environment
@@ -77,7 +76,7 @@ export default function About() {
       {/* VALUES */}
       <section className="section values-section">
         <div className="section-inner">
-          <span className="pill-label">💫 Our Values</span>
+         
           <h2 className="section-title">What We Stand For</h2>
           <p className="section-subtitle">Six core values guide everything we do — from curriculum design to how we speak with children every day.</p>
           <div className="values-grid">
@@ -95,7 +94,7 @@ export default function About() {
       {/* CURRICULUM */}
       <section className="section curriculum-section">
         <div className="section-inner">
-          <span className="pill-label">📚 Our Curriculum</span>
+    
           <h2 className="section-title">Holistic, Play-Based Learning</h2>
           <p className="section-subtitle">Our curriculum covers all developmental domains through play, projects, and purposeful exploration.</p>
           <div className="curriculum-grid">
