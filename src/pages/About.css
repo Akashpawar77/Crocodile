@@ -1,5 +1,15 @@
 .about-page { padding-top: 80px; }
-
+.about-banner {
+  padding: 50px 0px 10px 120px;
+  color: rgb(12, 11, 11);
+ 
+}
+.about-banner h1 {
+  padding-left: 25px;
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin: 0;
+}
 .about-hero {
   background: linear-gradient(135deg, #FFF9E6 0%, #FFF0F8 50%, #EEF4FF 100%);
   padding: 80px 24px 60px;
