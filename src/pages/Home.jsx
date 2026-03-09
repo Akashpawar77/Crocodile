@@ -160,7 +160,7 @@ export default function Home() {
             {programs.slice(0, 3).map((p) => (
               <div key={p.id} className="program-preview-card" style={{ "--color": p.color, "--bg": p.bg }}>
                 {/* <div className="pp-emoji">{p.emoji}</div> */}
-                 <img src="../pic/unicorn.png" classname="pic"/>
+                 {/* <img src="../pic/unicorn.png" classname="pic"/> */}
                 <h3>{p.title}</h3>
                 <div className="pp-age">{p.age}</div>
                 <div className="pp-schedule">{p.schedule}</div>
