@@ -151,7 +151,7 @@ export default function Home() {
           {/* <span className="pill-label">🎒 Our Programs</span> */}
           <div className="pro-title">
             <img className="pro-pic" src="../pic/software.png" />
-            <span className="highlight"> Our Programs</span>
+            <span> Our <span className="highlight">Programs</span></span>
           </div>
           <h2 className="section-title">Learning Adventures for Every Age</h2>
           <p className="section-subtitle">From toddlers to kindergarteners, we have the perfect program for your child.</p>
