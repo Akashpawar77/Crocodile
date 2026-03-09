@@ -15,21 +15,21 @@ function ProgramCard({ program }) {
       onMouseLeave={() => setHovered(false)}
     >
       <div className="prog-card-top">
-        <div className="prog-emoji">{program.emoji}</div>
+        <h3>{program.title}</h3><br/>
+        <div className="prog-age">{program.age}</div><br/>
+        {/* <div className="prog-emoji">{program.emoji}</div> */}
         <div className="prog-spots">
           <span className={program.spots <= 5 ? "spots-low" : ""}>
             {program.spots <= 5 ? "⚠️ Only " : "✅ "}{program.spots} spots left
           </span>
         </div>
       </div>
-      <div className="prog-age">{program.age}</div>
-      <h3>{program.title}</h3>
       <p className="prog-desc">{program.description}</p>
-      <ul className="prog-features">
+      {/* <ul className="prog-features">
         {program.features.map((f) => (
           <li key={f}><span className="feat-dot" />  {f}</li>
         ))}
-      </ul>
+      </ul> */}
       <div className="prog-footer">
         <div className="prog-schedule">🕐 {program.schedule}</div>
         <button
@@ -55,7 +55,7 @@ export default function Programs() {
     <div className="programs-page">
 
       <section className="programs-hero">
-        <span className="pill-label">🎒 Our Programs</span>
+        {/* <span className="pill-label">🎒 Our Programs</span> */}
         <h1>Find the Perfect Program <span>for Your Child</span></h1>
         <p>Six thoughtfully designed programs for children aged 2–6, each one a unique adventure.</p>
       </section>
@@ -82,7 +82,7 @@ export default function Programs() {
       </section>
 
       {/* COMPARISON */}
-      <section className="section comparison-section">
+      {/* <section className="section comparison-section">
         <div className="section-inner">
           <span className="pill-label">📊 Program Comparison</span>
           <h2 className="section-title">Quick Comparison</h2>
@@ -111,7 +111,7 @@ export default function Programs() {
             </table>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* PROCESS */}
       <section className="section process-section">
