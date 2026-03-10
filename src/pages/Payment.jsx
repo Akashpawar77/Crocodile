@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Payment.css";
-
+import bee from "../../pic/bee1.png";
+import bee1 from "../../pic/bee2.png";
+import bee2 from "../../pic/bee3.png";
 const PLANS = [
   {
     id: "monthly",
@@ -9,7 +11,7 @@ const PLANS = [
       {
         id: "tiny",
         name: "Tiny Explorers (Age 2–3)",
-        emoji: "🌱",
+        icon: bee,
 
         price: 850,
         color: "#FF6B6B",
@@ -17,35 +19,35 @@ const PLANS = [
       {
         id: "builder",
         name: "Little Builders (Age 3–4)",
-        emoji: "🏗️",
+        icon: bee1,
         price: 950,
         color: "#FFBE0B",
       },
       {
         id: "creative",
         name: "Creative Stars (Age 4–5)",
-        emoji: "🎨",
+        icon: bee2,
         price: 1050,
         color: "#8338EC",
       },
       {
         id: "kprep",
         name: "Kindergarten Prep (Age 5–6)",
-        emoji: "🎒",
+        icon: bee2,
         price: 1150,
         color: "#3A86FF",
       },
       {
         id: "afterschool",
         name: "After-School Club",
-        emoji: "🌈",
+        icon: bee,
         price: 600,
         color: "#06D6A0",
       },
       {
         id: "weekend",
         name: "Weekend Workshop",
-        emoji: "🦋",
+        icon: bee1,
         price: 300,
         color: "#FB5607",
       },
@@ -225,7 +227,20 @@ export default function Payment() {
                             <span className="psc-check">✓</span>
                           )}
                         </div>
-                        <div className="psc-name">{p.name}</div>
+                        <div className="psc-name">
+                          <img
+                            src={p.icon}
+                            alt={p.name}
+                            style={{
+                              width: "80px",
+                              height: "80px",
+                              marginBottom: "8px",
+                            }}
+                          />
+                          <div>
+                            <b>{p.name}</b>
+                          </div>
+                        </div>
                       </label>
                     ))}
                   </div>
@@ -556,7 +571,15 @@ export default function Payment() {
                 {selectedProgram ? (
                   <>
                     <div className="os-program">
-                      <span>{prog?.emoji}</span>
+                      <img
+                        src={prog?.icon}
+                        alt={prog?.name}
+                        style={{
+                          width: "30px",
+                          height: "30px",
+                          marginRight: "10px",
+                        }}
+                      />
                       <div>
                         <div className="os-pname">{prog?.name}</div>
                         <div className="os-psub">Monthly tuition</div>
