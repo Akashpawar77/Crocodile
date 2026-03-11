@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
-import { FaFacebookF, FaInstagram, FaYoutube, FaEnvelope } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+  FaEnvelope,
+} from "react-icons/fa";
 
 export default function Footer() {
-
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
@@ -15,15 +19,13 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-
       <div className="footer-container">
-
         {/* BRAND */}
         <div className="footer-brand">
           <h2>Monkey Dee</h2>
           <p>
-            Where little minds grow through play, creativity,
-            and joyful learning every day.
+            Where little minds grow through play, creativity, and joyful
+            learning every day.
           </p>
 
           <form className="newsletter" onSubmit={handleSubmit}>
@@ -32,7 +34,7 @@ export default function Footer() {
               type="email"
               placeholder="Enter email"
               value={email}
-              onChange={(e)=>setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
             <button>Subscribe</button>
@@ -43,10 +45,18 @@ export default function Footer() {
         <div className="footer-col">
           <h3>Quick Links</h3>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/programs">Programs</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/programs">Programs</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
           </ul>
         </div>
 
@@ -62,6 +72,7 @@ export default function Footer() {
         </div>
 
         {/* CONTACT */}
+        {/* CONTACT - Updated social section */}
         <div className="footer-col">
           <h3>Contact</h3>
           <p>123 Sunshine Lane</p>
@@ -69,18 +80,22 @@ export default function Footer() {
           <p>hello@monkeedee.com</p>
 
           <div className="social">
-            <a href="#"><FaFacebookF/></a>
-            <a href="#"><FaInstagram/></a>
-            <a href="#"><FaYoutube/></a>
+            <a href="#" aria-label="Facebook">
+              <FaFacebookF />
+            </a>
+            <a href="#" aria-label="Instagram">
+              <FaInstagram />
+            </a>
+            <a href="#" aria-label="YouTube">
+              <FaYoutube />
+            </a>
           </div>
         </div>
-
       </div>
 
       <div className="footer-bottom">
         © {new Date().getFullYear()} Monkey Dee Preschool
       </div>
-
     </footer>
   );
 }
