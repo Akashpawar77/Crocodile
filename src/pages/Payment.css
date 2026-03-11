@@ -1,385 +1,364 @@
-/* ================= PREMIUM PAYMENT PAGE ================= */
+/* ================= PAGE ================= */
 
-.payment-page{
-  padding-top:80px;
-  background:#f5f7fb;
-  min-height:100vh;
+.payment-page {
+    padding-top: 80px;
+    background: #f5f7fb;
+    min-height: 100vh;
 }
 
 /* ================= HERO ================= */
 
-.payment-hero{
-  background:linear-gradient(135deg,#0b2a59,#3a86ff);
-  padding:100px 20px;
-  text-align:center;
-  color:white;
-  position:relative;
-  overflow:hidden;
+.payment-hero {
+    background: linear-gradient(135deg, #2b4c7e, #3a86ff);
+    padding: 90px 20px;
+    text-align: center;
+    color: white;
 }
 
-.payment-hero::before{
-  content:"";
-  position:absolute;
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);
-  top:-200px;
-  left:-200px;
+.payment-hero h1 {
+    font-family: "Fredoka One", cursive;
+    font-size: 2.7rem;
+    margin-bottom: 10px;
 }
 
-.payment-hero::after{
-  content:"";
-  position:absolute;
-  width:500px;
-  height:500px;
-  background:radial-gradient(circle,rgba(255,190,11,0.2) 0%,transparent 70%);
-  bottom:-200px;
-  right:-200px;
+.payment-hero p {
+    font-size: 1.15rem;
+    opacity: .9;
+    max-width: 600px;
+    margin: auto;
 }
 
-.payment-hero h1{
-  font-family:"Fredoka One",cursive;
-  font-size:3rem;
-  margin-bottom:12px;
-}
+/* ================= SECTION ================= */
 
-.payment-hero p{
-  opacity:.85;
-  font-size:1.1rem;
+.payment-section {
+    padding: 50px 20px;
 }
 
 /* ================= LAYOUT ================= */
 
-.payment-section{
-  padding:40px 20px;
-}
-
-.payment-layout{
-  display:grid;
-  grid-template-columns:1fr 320px;
-  gap:30px;
-  max-width:1100px;
-  margin:auto;
+.payment-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 32px;
+    max-width: 1150px;
+    margin: auto;
 }
 
 /* ================= PAYMENT CARD ================= */
 
-.pay-panel{
-  background:rgba(255,255,255,0.9);
-  backdrop-filter:blur(10px);
-  border-radius:20px;
-  padding:36px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.08);
-  border:1px solid rgba(255,255,255,0.3);
-  animation:fadeUp .5s ease;
+.pay-panel {
+    background: white;
+    border-radius: 22px;
+    padding: 38px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
 }
 
-/* ================= STEP PROGRESS ================= */
+/* ================= STEPPER ================= */
 
-/* STEPPER CONTAINER */
 .stepper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 30px 0 40px;
-  position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 40px;
+    position: relative;
 }
 
-/* CONNECTING LINE */
 .stepper::before {
-  content: "";
-  position: absolute;
-  top: 18px;
-  left: 10%;
-  width: 80%;
-  height: 3px;
-  background: #e5e7eb;
-  z-index: 0;
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: #e5e7eb;
+    z-index: 0;
 }
 
-/* EACH STEP */
 .step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-  flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+    z-index: 1;
 }
 
-/* STEP CIRCLE */
 .step-number {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #e5e7eb;
-  color: #555;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 14px;
-  transition: 0.3s;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    transition: .3s;
 }
 
-/* STEP LABEL */
 .step-label {
-  margin-top: 8px;
-  font-size: 13px;
-  color: #6b7280;
-  text-align: center;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #6b7280;
 }
 
-/* ACTIVE STEP */
 .step.active .step-number {
-  background: #3b82f6;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #3a86ff;
+    color: white;
+    box-shadow: 0 6px 15px rgba(58, 134, 255, 0.4);
 }
 
 .step.active .step-label {
-  color: #111827;
-  font-weight: 600;
+    color: #111827;
+    font-weight: 600;
 }
 
 /* ================= PROGRAM CARDS ================= */
 
-.program-select-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-  margin-bottom:25px;
+/* ================= PROGRAM CARDS ================= */
+
+.program-select-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 35px;
 }
 
-.prog-select-card{
-  border:2px solid #eee;
-  border-radius:16px;
-  padding:18px;
-  text-align:center;
-  cursor:pointer;
-  transition:.3s;
-  background:white;
+/* program card */
+
+.prog-select-card {
+    position: relative;
+    border: 2px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 26px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: .25s;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 170px;
 }
 
-.prog-select-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 25px rgba(0,0,0,0.08);
+/* hover */
+
+.prog-select-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
 }
 
-.prog-select-card.selected{
-  border-color:#3a86ff;
-  background:#f3f7ff;
-  box-shadow:0 8px 20px rgba(58,134,255,0.25);
+/* selected */
+
+.prog-select-card.selected {
+    border-color: #3a86ff;
+    background: #f0f7ff;
+    box-shadow: 0 10px 25px rgba(58, 134, 255, 0.25);
+}
+
+/* radio */
+
+.program-radio {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    transform: scale(1.2);
+}
+
+/* icon */
+
+.program-icon {
+    width: 65px;
+    margin-bottom: 5px;
+}
+
+/* name */
+
+.program-name {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.3;
+    color: #1f2937;
+}
+
+/* price */
+
+.program-price {
+    font-weight: 700;
+    font-size: 18px;
+    color: #3a86ff;
 }
 
 /* ================= PAYMENT METHODS ================= */
 
-.method-selector{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-bottom:25px;
+.method-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 30px;
 }
 
-.method-btn{
-  background:white;
-  border:2px solid #eee;
-  border-radius:14px;
-  padding:16px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  cursor:pointer;
-  transition:.25s;
+.method-btn {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: .25s;
 }
 
-.method-btn img{
-  width:36px;
-  margin-bottom:5px;
+.method-btn img {
+    width: 40px;
+    margin-bottom: 8px;
 }
 
-.method-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 18px rgba(0,0,0,0.08);
+.method-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
 }
 
-.method-btn.active{
-  border-color:#3a86ff;
-  background:#eef4ff;
-  box-shadow:0 8px 20px rgba(58,134,255,0.25);
+.method-btn.active {
+    border-color: #3a86ff;
+    background: #eef4ff;
+    box-shadow: 0 10px 20px rgba(58, 134, 255, 0.25);
 }
 
-/* ================= PAYMENT INFO ================= */
+/* ================= QR BOX ================= */
 
-.alt-pay-info{
-  background:#fafafa;
-  padding:30px;
-  border-radius:16px;
-  text-align:center;
-  margin-bottom:20px;
-  border:1px dashed #ddd;
+.upi-qr-box {
+    background: #f9fafc;
+    padding: 28px;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px dashed #d1d5db;
 }
 
-.alt-pay-info img{
-  margin-bottom:10px;
-}
-
-.alt-pay-info p{
-  color:#555;
-  font-size:1rem;
+.qr-code img {
+    width: 180px;
+    border-radius: 10px;
 }
 
 /* ================= BUTTONS ================= */
 
-.btn{
-  border:none;
-  border-radius:40px;
-  padding:12px 30px;
-  font-weight:700;
-  cursor:pointer;
-  transition:.25s;
+.btn {
+    border: none;
+    border-radius: 40px;
+    padding: 12px 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s;
 }
 
-.btn-primary{
-  background:linear-gradient(135deg,#ffbe0b,#ff8800);
-  color:white;
+.btn-primary {
+    background: linear-gradient(135deg, #ffbe0b, #ff8800);
+    color: white;
 }
 
-.btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 25px rgba(255,150,0,0.4);
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 150, 0, 0.4);
 }
 
-.btn-secondary{
-  background:#f3f3f3;
+.btn-secondary {
+    background: #f3f3f3;
 }
 
-.btn-secondary:hover{
-  background:#e8e8e8;
+.btn-secondary:hover {
+    background: #e8e8e8;
 }
 
-.step-nav{
-  display:flex;
-  justify-content:space-between;
+.step-nav {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* ================= ORDER SUMMARY ================= */
 
-.order-summary{
-  background:white;
-  border-radius:18px;
-  padding:24px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.07);
-  position:sticky;
-  top:120px;
+.order-summary {
+    background: white;
+    border-radius: 20px;
+    padding: 26px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 120px;
 }
 
-.order-summary h4{
-  font-family:"Fredoka One",cursive;
-  margin-bottom:18px;
+.order-summary h4 {
+    font-family: "Fredoka One", cursive;
+    margin-bottom: 18px;
 }
 
-.os-program{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:14px;
+.os-program {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
 }
 
-.os-program strong{
-  margin-left:auto;
+.os-program strong {
+    margin-left: auto;
 }
 
-.os-fee-row{
-  display:flex;
-  justify-content:space-between;
-  font-size:.9rem;
-  margin-bottom:6px;
+.os-fee-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: .9rem;
+    margin-bottom: 6px;
 }
 
-.os-total{
-  background:#1a1a2e;
-  border-radius:12px;
-  padding:14px 16px;
-  display:flex;
-  justify-content:space-between;
-  margin-top:12px;
+.os-total {
+    background: #1a1a2e;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
 }
 
-.os-total span{
-  color:rgba(255,255,255,0.7);
+.os-total span {
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.os-total strong{
-  color:#ffbe0b;
-  font-size:1.4rem;
+.os-total strong {
+    color: #ffbe0b;
+    font-size: 1.4rem;
 }
 
-/* ================= PAYMENT LOGOS ================= */
+/* ================= SUCCESS ================= */
 
-.payment-logos{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  margin-top:12px;
-}
-
-.payment-logos img{
-  background:#f5f5f5;
-  padding:6px 10px;
-  border-radius:8px;
-}
-
-/* ================= SUCCESS PANEL ================= */
-
-.confirmation-panel{
-  text-align:center;
-}
-
-.confirmation-panel h2{
-  font-family:"Fredoka One",cursive;
-  font-size:2rem;
-}
-
-.confirmation-panel p{
-  color:#555;
-}
-
-/* ================= ANIMATION ================= */
-
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+.success-animation {
+    font-size: 70px;
+    margin-bottom: 10px;
 }
 
 /* ================= RESPONSIVE ================= */
 
-@media(max-width:900px){
+@media(max-width:900px) {
 
-.payment-layout{
-  grid-template-columns:1fr;
+    .payment-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .program-select-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
-.program-select-grid{
-  grid-template-columns:repeat(2,1fr);
-}
+@media(max-width:600px) {
 
-}
+    .program-select-grid {
+        grid-template-columns: 1fr;
+    }
 
-@media(max-width:600px){
-
-.program-select-grid{
-  grid-template-columns:1fr;
-}
-
-.method-selector{
-  grid-template-columns:repeat(2,1fr);
-}
+    .method-selector {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
 }
