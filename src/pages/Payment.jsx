@@ -52,7 +52,6 @@ const programs = PLANS[0].programs;
 /* -------- TIMER -------- */
 
 useEffect(()=>{
-
 if(step !== 2) return;
 
 const timer = setInterval(()=>{
@@ -60,7 +59,6 @@ setTime(prev => prev > 0 ? prev - 1 : 0);
 },1000);
 
 return ()=>clearInterval(timer);
-
 },[step]);
 
 const minutes = Math.floor(time/60);
@@ -92,8 +90,8 @@ return (
 <div className="payment-page">
 
 <section className="payment-hero">
-<h1>Payment</h1>
-<p>Pay your tuition online in minutes.</p>
+<h1>One Step to Happy Learning 🎈</h1>
+<p>Secure your child's seat in just a few seconds.</p>
 </section>
 
 <section className="payment-section">
@@ -132,20 +130,20 @@ return (
 <label
 key={p.id}
 className={`prog-select-card ${selectedProgram===p.id ? "selected":""}`}
-
 >
 
 <input
 type="radio"
+className="program-radio"
 checked={selectedProgram===p.id}
 onChange={()=>setSelectedProgram(p.id)}
 />
 
-<img src={p.icon} width="70" alt="program"/>
+<img src={p.icon} className="program-icon" alt="program"/>
 
-<b>{p.name}</b>
+<div className="program-name">{p.name}</div>
 
-<div>₹{p.price}</div>
+<div className="program-price">₹{p.price}</div>
 
 </label>
 
@@ -157,10 +155,9 @@ onChange={()=>setSelectedProgram(p.id)}
 className="btn btn-primary"
 disabled={!selectedProgram}
 onClick={()=>setStep(2)}
-
 >
-
-Continue to Payment → </button>
+Continue to Payment →
+</button>
 
 </div>
 
@@ -174,23 +171,9 @@ Continue to Payment → </button>
 
 <h3>Payment Details</h3>
 
-{/* TIMER */}
-
 <div className="payment-timer">
 ⏱ Complete payment in {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
 </div>
-
-{/* 3D CARD */}
-
-<div className="card-3d-container">
-<div className="card-3d">
-<div className="card-chip"></div>
-<div className="card-number">•••• •••• •••• 2458</div>
-<div className="card-name">Monkey Dee</div>
-</div>
-</div>
-
-{/* METHODS */}
 
 <div className="method-selector">
 
@@ -200,11 +183,9 @@ Continue to Payment → </button>
 key={m.id}
 className={`method-btn ${payMethod===m.id?"active":""}`}
 onClick={()=>setPayMethod(m.id)}
-
 >
 
 <img src={m.icon} width="35" alt="method"/>
-
 <span>{m.label}</span>
 
 </button>
@@ -212,8 +193,6 @@ onClick={()=>setPayMethod(m.id)}
 ))}
 
 </div>
-
-{/* QR PAYMENT */}
 
 <div className="upi-qr-box">
 
@@ -241,18 +220,16 @@ UPI ID : <b>monkeydee@upi</b>
 <button
 className="btn btn-secondary"
 onClick={()=>setStep(1)}
-
 >
-
-Back </button>
+Back
+</button>
 
 <button
 className="btn btn-primary"
 onClick={()=>setStep(3)}
-
 >
-
-Pay ₹{total} </button>
+Pay ₹{total}
+</button>
 
 </div>
 
@@ -281,10 +258,9 @@ setStep(1);
 setSelectedProgram(null);
 setTime(300);
 }}
-
 >
-
-Make Another Payment </button>
+Make Another Payment
+</button>
 
 </div>
 
