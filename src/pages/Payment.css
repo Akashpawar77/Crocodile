@@ -162,9 +162,11 @@
 
 .program-radio {
     position: absolute;
-    top: 14px;
-    left: 14px;
-    transform: scale(1.2);
+    top: 12px;
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
 }
 
 /* icon */
@@ -361,4 +363,17 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+}
+.payment-info {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 8px;
+    text-align: right;
+}
+.program-name {
+    font-weight: 700;
+    font-size: 16px;
+    color: #1a1a2e;
+    text-align: center;
+    margin-top: 6px;
 }
