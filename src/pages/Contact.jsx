@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import {Bus, ParkingCircle, Trees, Hospital, Navigation } from "lucide-react";
 import "./Contact.css";
 
 const faqs = [
@@ -40,42 +42,52 @@ export default function Contact() {
   return (
     <div className="contact-page">
 
-      <section className="contact-hero">
-        <span className="pill-label">📬 Contact Us</span>
-        <h1>We'd <span>Love</span> to Hear From You!</h1>
-        <p>Have questions? Want to schedule a tour? Our team is friendly, fast, and ready to help.</p>
-      </section>
+      
 
       <section className="section">
         <div className="section-inner contact-grid">
 
           {/* INFO */}
-          <div className="contact-info">
-            <h3>Get in Touch</h3>
-            {[
-              { icon: "📍", title: "Our Address", lines: ["123 Sunshine Lane", "Kidsville, CA 90210"] },
-              { icon: "📞", title: "Phone", lines: ["(555) 123-4567", "(555) 987-6543 (Emergency)"] },
-              { icon: "✉️", title: "Email", lines: ["hello@monkeedee.com", "admissions@monkeedee.com"] },
-              { icon: "🕐", title: "Hours", lines: ["Mon–Fri: 7:00 AM – 6:30 PM", "Saturday: 8:30 AM – 1:00 PM"] },
-            ].map((item) => (
-              <div key={item.title} className="info-item">
-                <div className="info-icon">{item.icon}</div>
-                <div>
-                  <h4>{item.title}</h4>
-                  {item.lines.map(l => <p key={l}>{l}</p>)}
-                </div>
-              </div>
-            ))}
 
-            <div className="social-section">
-              <h4>Follow Us</h4>
-              <div className="contact-socials">
-                {["📘 Facebook", "📸 Instagram", "🐦 Twitter", "▶️ YouTube"].map(s => (
-                  <a key={s} href="#!" className="social-pill">{s}</a>
-                ))}
-              </div>
-            </div>
-          </div>
+<div className="contact-info">
+  <h3>Get in Touch</h3>
+
+  {[
+    {
+      icon: <MapPin size={22} />,
+      title: "Our Address",
+      lines: ["123 Sunshine Lane", "Kidsville, CA 90210"],
+    },
+    {
+      icon: <Phone size={22} />,
+      title: "Phone",
+      lines: ["(555) 123-4567", "(555) 987-6543 (Emergency)"],
+    },
+    {
+      icon: <Mail size={22} />,
+      title: "Email",
+      lines: ["hello@monkeedee.com", "admissions@monkeedee.com"],
+    },
+    {
+      icon: <Clock size={22} />,
+      title: "Hours",
+      lines: ["Mon–Fri: 7:00 AM – 6:30 PM", "Saturday: 8:30 AM – 1:00 PM"],
+    },
+  ].map((item) => (
+    <div key={item.title} className="info-item">
+      <div className="info-icon">{item.icon}</div>
+
+      <div className="info-text">
+        <h4>{item.title}</h4>
+        {item.lines.map((l) => (
+          <p key={l}>{l}</p>
+        ))}
+      </div>
+    </div>
+  ))}
+
+ 
+</div>
 
           {/* FORM */}
           <div className="contact-form-wrap">
@@ -124,48 +136,63 @@ export default function Contact() {
       </section>
 
       {/* MAP PLACEHOLDER */}
-      <section className="section map-section">
-        <div className="section-inner">
-          <span className="pill-label">📍 Find Us</span>
-          <h2 className="section-title">Visit Our Campus</h2>
-          <div className="map-placeholder">
-            <div className="map-content">
-              <div className="map-pin-anim">📍</div>
-              <h3>Monkey Dee Preschool</h3>
-              <p>123 Sunshine Lane, Kidsville, CA 90210</p>
-              <p className="map-desc">Nestled in a quiet, tree-lined neighborhood with easy parking, green play areas, and a warm, welcoming campus.</p>
-              <div className="map-directions">
-                <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="btn btn-blue">
-                  🗺️ Get Directions on Google Maps
-                </a>
-              </div>
-            </div>
-            <div className="map-landmarks">
-              {[
-                { icon: "🚌", label: "Bus Stop: 2 min walk" },
-                { icon: "🅿️", label: "Free Parking: 50 spots" },
-                { icon: "🌳", label: "Park: Right next door" },
-                { icon: "🏥", label: "Hospital: 1.2 km away" },
-              ].map(l => (
-                <div key={l.label} className="landmark">
-                  <span>{l.icon}</span><span>{l.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+
+<section className="section map-section">
+  <div className="section-inner">
+
+    <h2 className="section-title">Visit Our Campus</h2>
+
+    <div className="map-card">
+
+      <div className="map-left">
+        <div className="map-icon">
+          <MapPin size={28} />
         </div>
-      </section>
+
+        <h3>Monkey Dee Preschool</h3>
+
+        <p className="campus-address">
+          123 Sunshine Lane, Kidsville, CA 90210
+        </p>
+
+        <p className="map-desc">
+          Nestled in a quiet, tree-lined neighborhood with easy parking,
+          green play areas, and a warm welcoming campus.
+        </p>
+
+        <a
+          href="https://maps.google.com"
+          target="_blank"
+          rel="noreferrer"
+          className="map-btn"
+        >
+          <Navigation size={18} />
+          Get Directions
+        </a>
+      </div>
+
+      <div className="map-right">
+
+        {[
+          { icon: <Bus size={20} />, label: "Bus Stop – 2 min walk" },
+          { icon: <ParkingCircle size={20} />, label: "Free Parking – 50 spots" },
+          { icon: <Trees size={20} />, label: "Park – Right next door" },
+          { icon: <Hospital size={20} />, label: "Hospital – 1.2 km away" },
+        ].map((item) => (
+          <div key={item.label} className="landmark-card">
+            <div className="landmark-icon">{item.icon}</div>
+            <p>{item.label}</p>
+          </div>
+        ))}
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* FAQ */}
-      <section className="section faq-section">
-        <div className="section-inner">
-          <span className="pill-label">❓ FAQs</span>
-          <h2 className="section-title">Frequently Asked Questions</h2>
-          <div className="faq-list">
-            {faqs.map(f => <FAQItem key={f.q} {...f} />)}
-          </div>
-        </div>
-      </section>
+   
 
     </div>
   );
