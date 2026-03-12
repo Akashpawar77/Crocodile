@@ -149,7 +149,6 @@ export default function Enrollment() {
       {submitted && <ConfirmationModal data={fields} onClose={() => { setSubmitted(false); setFields(INITIAL); setStep(1); setTouched({}); }} />}
 
       <section className="enrollment-hero">
-        <span className="pill-label">📝 Enrollment</span>
         <h1>Join the <span>Monkey Dee</span> Family!</h1>
         <p>Complete the form below and our team will be in touch within 24 hours to confirm your spot.</p>
       </section>
@@ -158,14 +157,7 @@ export default function Enrollment() {
         <div className="section-inner enrollment-inner">
 
           {/* STEPPER */}
-          <div className="stepper">
-            {["Parent Info", "Child Info", "Program & More"].map((label, i) => (
-              <div key={i} className={`step-dot ${step > i + 1 ? "done" : ""} ${step === i + 1 ? "active" : ""}`}>
-                <div className="dot-circle">{step > i + 1 ? "✓" : i + 1}</div>
-                <span>{label}</span>
-              </div>
-            ))}
-          </div>
+          
 
           <form className="enrollment-form" onSubmit={handleSubmit} noValidate>
 
@@ -205,9 +197,7 @@ export default function Enrollment() {
                   </select>
                   <E field="relationship" />
                 </div>
-                <button type="button" className="btn btn-blue btn-full" onClick={nextStep}>
-                  Next: Child Information →
-                </button>
+                
               </div>
             )}
 
@@ -255,10 +245,7 @@ export default function Enrollment() {
                   <label className="form-label">Medical Notes / Allergies</label>
                   <textarea className="form-textarea" placeholder="Any allergies, conditions, or special notes for our staff..." value={fields.medicalNotes} onChange={set("medicalNotes")} />
                 </div>
-                <div className="step-nav">
-                  <button type="button" className="btn btn-secondary" onClick={() => setStep(1)}>← Back</button>
-                  <button type="button" className="btn btn-blue" onClick={nextStep}>Next: Program Selection →</button>
-                </div>
+                
               </div>
             )}
 
@@ -302,8 +289,9 @@ export default function Enrollment() {
                   <E field="agreeTerms" />
                 </div>
                 <div className="step-nav">
-                  <button type="button" className="btn btn-secondary" onClick={() => setStep(2)}>← Back</button>
-                  <button type="submit" className="btn btn-primary">Submit Enrollment 🎉</button>
+                  <button type="submit" className="btn btn-primary btn-full">
+                    Submit Enrollment 🎉
+                  </button>
                 </div>
               </div>
             )}
