@@ -257,6 +257,11 @@ margin-bottom:10px;
   background:#f7f9fc;
 }
 
+.presence-icon{
+  font-size: 32px;
+  color: #ff7a00;
+  margin-right: 12px;
+}
 .presence-title{
   font-size:40px;
   font-weight:700;
