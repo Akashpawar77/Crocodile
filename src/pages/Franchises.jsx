@@ -17,7 +17,11 @@ const steps = [
 ];
 
 const faqs = [
- 
+  { q: "How is the monkey-dee Franchise model different?", a: "The Monkey-dee franchise model stands out as a unique and distinctive approach. Typically, the responsibility for demand generation (sales and marketing) rests with the franchise; however, Monkey-Dee takes full control of this aspect, ensuring a 100% success rate to date with zero franchise closures.Our model is a true partnership model, built on a transparent variable revenue share structure. We commence revenue sharing only after our partner achieves break-even, and the share scales progressively with every child enrolled. Additionally, we share a portion of the fees collected from books, registration amounts, and monthly app fees charged to parents with our franchisees." },
+  { q: "What is the typical ROI timeline?", a: "Most franchisees reach break-even within 18–24 months. Many Growth and Master franchisees see profitability within 12–18 months." },
+  { q: "Is financing available?", a: "Yes — we partner with SBA-approved lenders and can connect you with financing options that cover up to 70% of the franchise fee." },
+  { q: "What territories are available?", a: "We are actively expanding across the Southern US, Southeast, and internationally. Contact us for current territory availability in your area." },
+  { q: "What ongoing support do I receive?", a: "All franchisees receive regular coaching calls, access to our digital operations platform, marketing support, curriculum updates, and an annual in-person summit." },
 ];
 
 function FAQItem({ q, a }) {
