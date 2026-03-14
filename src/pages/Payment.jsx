@@ -8,6 +8,7 @@ import bee2 from "../../pic/bee3.png";
 import phonepe from "../../pic/Phonepay.png";
 import gpay from "../../pic/GooglePay.png";
 import upi from "../../pic/Paytm.png";
+import qr from "../../pic/qr.jpeg";
 
 /* ---------------- PROGRAM DATA ---------------- */
 
@@ -203,7 +204,7 @@ Scan using PhonePe / Google Pay / Paytm
 <div className="qr-code">
 
 <img
-src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=monkeydee@upi&am=${total}`}
+src={qr}
 alt="qr"
 />
 
