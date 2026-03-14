@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaCity, FaSchool, FaUsers } from "react-icons/fa";
 import "./Franchises.css";
 
 const tiers = [
@@ -97,7 +98,9 @@ export default function Franchises() {
   <div className="presence-grid">
 
     <div className="presence-card cities">
-      <div className="presence-icon">🇮🇳</div>
+      <div className="presence-icon">
+        <FaCity />
+      </div>
       <div>
         <h3>29</h3>
         <p>Cities</p>
@@ -105,7 +108,9 @@ export default function Franchises() {
     </div>
 
     <div className="presence-card centres">
-      <div className="presence-icon">🏫</div>
+      <div className="presence-icon">
+        <FaSchool />
+      </div>
       <div>
         <h3>218</h3>
         <p>Centres</p>
@@ -113,7 +118,9 @@ export default function Franchises() {
     </div>
 
     <div className="presence-card parents">
-      <div className="presence-icon">👨‍👩‍👧</div>
+      <div className="presence-icon">
+        <FaUsers />
+      </div>
       <div>
         <h3>57608</h3>
         <p>Delighted Parents</p>
