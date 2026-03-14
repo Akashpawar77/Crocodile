@@ -1,6 +1,6 @@
 .locate-page{
-  padding:60px 8%;
-  background:#f7f7fb;
+  padding:70px 0px 20px 0px;
+  background:linear-gradient(135deg, #FFF9E6 0%, #FFF0F8 50%, #EEF4FF 100%);
   font-family:'monospace',cursive;
  
 }
@@ -10,7 +10,7 @@
   font-size:42px;
   margin:50px;
   padding: 20px;
-  background-color:#fdfdfd;
+  background-color:#fbe9f7;
 }
 
 .filter-bar{

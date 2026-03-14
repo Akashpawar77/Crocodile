@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import programs from "../data/programs";
+
 import "./Home.css";
 
 function StatCard({ number, label}) {
@@ -102,6 +103,7 @@ export default function Home() {
 
       {/* STATS */}
       <section className="stats-bar">
+        
         <div className="stats-inner">
           <div>
             <img className="pic" src="../pic/education.png"/>
@@ -162,9 +164,14 @@ export default function Home() {
                 {/* <div className="pp-emoji">{p.emoji}</div> */}
                  {/* <img src="../pic/unicorn.png" classname="pic"/> */}
                 <h3>{p.title}</h3>
-                <div className="pp-age">{p.age}</div>
+
+                <img src="https://tse2.mm.bing.net/th/id/OIP.kX-XT4bgBzYCjQZuY2uTsQHaEJ?pid=ImgDet&w=187&h=104&c=7&dpr=1.3&o=7&rm=3" alt="play-school" loading="lazy"style={{ width: "100%", height: "auto", borderRadius: "10px" }}></img>
+                
+                <div className="pp-age">{p.age}
+                  
+                </div>
                 <div className="pp-schedule">{p.schedule}</div>
-                <p>{p.description}</p>
+                {/* <p>{p.description}</p> */}
               </div>
             ))}
           </div>
@@ -175,16 +182,17 @@ export default function Home() {
       </section>
 
       {/* GALLERY */}
-      <section className="section gallery-section">
+      <section className="demosection">
         <div className="section-inner">
           {/* <span className="pill-label">📸 School Life</span> */}
           <h2 className="section-title">A Day at Monkey Dee</h2>
+          
           <div className="gallery-grid">
             {[
-              { src: "../pic/chlild3.jpg", label: "Art Time 🎨" },
-              { src: "https://images.unsplash.com/photo-1560807707-8cc77767d783?w=400&q=80", label: "Outdoor Play 🌳" },
-              { src: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?w=400&q=80", label: "Story Time 📖" },
-              { src: "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=400&q=80", label: "Science Fun 🔬" },
+              { src: "https://tse1.explicit.bing.net/th/id/OIP.mrIHvkFHrfsh0P0UqxjKVgHaLH?pid=ImgDet&w=187&h=280&c=7&dpr=1.3&o=7&rm=3", label: "Art Time 🎨" },
+              { src: "https://th.bing.com/th/id/OIP.XGqf_PvcA9VnOy5zkpFZ2QHaE7?w=294&h=196&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3", label: "Outdoor Play 🌳" },
+              { src: "https://th.bing.com/th/id/OIP.HcduDHSReidG1aKcczlt4wHaEp?w=305&h=192&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3", label: "Story Time 📖" },
+              { src: "https://th.bing.com/th/id/OIP.RXI3bLwuzt4Z5wSlUevCEQHaHa?w=208&h=208&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3", label: "Science Fun 🔬" },
             ].map((img, i) => (
               <div key={i} className="gallery-item">
                 <img src={img.src} alt={img.label} />
@@ -217,7 +225,7 @@ export default function Home() {
         <div className="cta-content">
           {/* <div className="cta-emoji">🐒</div> */}
           <h2>Ready to Join the Monkey Dee Family?</h2>
-          <p>Spots fill fast — secure your child's place in our award-winning preschool today!</p>
+          <p>secure your child's place in our award-winning preschool today!</p>
           <div className="cta-buttons">
             <Link to="/enrollment" className="btn btn-primary">Enroll Now 🎉</Link>
             <Link to="/contact" className="btn btn-secondary">Schedule a Tour →</Link>
