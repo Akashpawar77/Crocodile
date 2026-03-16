@@ -6,7 +6,7 @@ const programs = [
     age: "2-3 Years",
     days: "5 Days",
     time: "2 Hr 15 Min",
-    image: "/pic/program1.jpeg"
+    image: "/pic/child3.jpg"
   },
 
   {
@@ -26,7 +26,7 @@ const programs = [
     age: "4-5 Years",
     days: "5 Days",
     time: "3 Hours",
-    image: "/pic/program3.jpeg"
+    image: "/pic/child5.jpg"
   },
 
   {
@@ -36,7 +36,7 @@ const programs = [
     age: "5-6 Years",
     days: "5 Days",
     time: "3 Hours",
-    image: "/pic/program4.jpeg"
+    image: "/pic/child4.jpg"
   }
 ];
 
