@@ -94,7 +94,7 @@ export default function Programs() {
       <div className="programs-container">
 
         <h2 className="programs-title">
-          Our <span>Programmes</span>
+          Our Programmes
         </h2>
 
         {/* CLASS SELECTOR */}
@@ -183,16 +183,25 @@ export default function Programs() {
 
         <h3>{prog.title}</h3>
 
-        <button
+        {/* <button
           className="plus-btn"
           onClick={(e) => {
-            e.stopPropagation(); 
-            setActiveProgram(prog);
-            setSelectedClass(prog.title);
+            e.setActiveProgram();
+            // e.stopPropagation(); 
+            // setActiveProgram(prog);
+            // setSelectedClass(prog.title);
           }}
-        >
-          +
+        > */}
+        {Object.keys(programContent).map((cls) => (
+            <button
+              key={cls}
+              className={selectedClass === prog.title ? "active-tab" : ""}
+              onClick={() => setSelectedClass(prog.title)}
+            >
+              
         </button>
+          ))}
+         
 
       </div>
 
@@ -208,7 +217,7 @@ export default function Programs() {
 
       {/* POPUP */}
 
-      {activeProgram && (
+      {/* {activeProgram && (
         <div className="program-popup-overlay">
 
           <div className="program-popup">
@@ -239,12 +248,21 @@ export default function Programs() {
                 <p>{activeProgram.time}</p>
               </div>
 
+             {Object.keys(programContent).map((cls) => (
+              <button
+                key={cls}
+                className={selectedClass === cls ? "active-tab" : ""}
+                onClick={() => setSelectedClass(cls)}
+              >
+                {cls}
+              </button>
+            ))}
             </div>
 
           </div>
 
         </div>
-      )}
+      )} */}
 
     </div>
   );
