@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
-
+import logo from "../../pic/wonder.png";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,10 +26,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="nav-inner">
         <Link to="/" className="nav-logo" onClick={() => setMenuOpen(false)}>
-          <span className="logo-icon">🐒</span>
-          <span className="logo-text">
-            Monkey <span>Dee</span>
-          </span>
+          <img src={logo} alt="WonderKids Preschool Logo" className="logo-img" />
         </Link>
 
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>

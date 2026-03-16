@@ -3,6 +3,10 @@
     font-family: "Poppins", Arial, sans-serif;
     background: linear-gradient(180deg, #fffdf7, #ffffff, #f7fbff);
 }
+.ab-blobs { position: absolute; inset: 0; pointer-events: none; }
+.ab-blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.3; }
+.ab-blob1 { width: 500px; height: 500px; background: #FFBE0B; top: -150px; right: -100px; animation: float 8s ease-in-out infinite; }
+.ab-blob2 { width: 350px; height: 350px; background: #8338EC; bottom: -100px; left: -80px; animation: float 6s ease-in-out infinite reverse; }
 
 /* HERO */
 .about-header {
@@ -10,6 +14,8 @@
     margin-top: 40px;
     font-family: "monospace", cursive;
     font-size: clamp(1rem, 2vw, 1.8rem);
+    color: #FFBE0B;
+
 }
 
 .about-hero {
@@ -64,11 +70,34 @@
     margin: auto;
 }
 
-.section-title {
+.new-title {
     font-family: "monospace", cursive;
-    font-size: clamp(1.9rem, 3vw, 2.3rem);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color:#FFBE0B;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+}
+
+.new1-title {
+    font-family: "monospace", cursive;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color:#FFBE0B;
+    text-align: center;
+    margin-bottom: 12px;
+}
+.new2-title {
+    font-family: "monospace", cursive;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: #FFBE0B;
+    text-align: center;
+    margin-bottom: 12px;
+}
+.new3-title {
+    font-family: "monospace", cursive;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: #FFBE0B;
+    text-align: center;
+    margin-bottom: 12px;
 }
 
 .section-subtitle {
@@ -136,7 +165,7 @@
 }
 
 .timeline-item {
-    background: white;
+    background: #FFFFFF;
     padding: 24px;
     border-radius: 14px;
     text-align: center;
