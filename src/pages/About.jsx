@@ -119,8 +119,11 @@ confidence to express themselves, the curiosity to ask questions, and the courag
 {/* JOURNEY */}
 
 <section className="section journey">
-
-<h2 className="section-title">Our Journey</h2>
+<div className="ab-blobs">
+          <div className="ab-blob ab-blob1" />
+          <div className="ab-blob ab-blob2" />
+        </div>
+<h2 className="new-title">Our Journey</h2>
 
 <p className="section-subtitle">
 A journey of nurturing young minds and building a joyful learning community.
@@ -160,7 +163,7 @@ A journey of nurturing young minds and building a joyful learning community.
 
 <section className="section values">
 
-<h2 className="section-title">What We Stand For</h2>
+<h2 className="new1-title">What We Stand For</h2>
 
 <p className="section-subtitle">
 Our philosophy is built on values that inspire learning,
@@ -191,7 +194,7 @@ creativity, and growth for every child.
 
 <section className="section team">
 
-<h2 className="section-title">Meet the Team</h2>
+<h2 className="new2-title">Meet the Team</h2>
 
 <p className="section-subtitle">
 Passionate educators dedicated to nurturing every child.
@@ -226,7 +229,7 @@ Passionate educators dedicated to nurturing every child.
 
 <section className="section curriculum">
 
-<h2 className="section-title">Holistic, Play-Based Learning</h2>
+<h2 className="new3-title">Holistic, Play-Based Learning</h2>
 
 <p className="section-subtitle">
 Our curriculum covers all developmental domains through play,

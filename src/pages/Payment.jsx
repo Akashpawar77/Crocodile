@@ -247,9 +247,9 @@ Pay ₹{total}
 <div className="success-animation">✓</div>
 
 <h2>Payment Successful</h2>
-
+<h2>&nbsp;</h2>
 <p>Your tuition for <b>{prog?.name}</b> has been received.</p>
-
+<h2>&nbsp;</h2>
 <div>Amount Paid : <b>₹{total}</b></div>
 
 <button
@@ -273,15 +273,15 @@ Make Another Payment
 
 <div className="order-summary">
 
-<h4>Order Summary</h4>
-
+<h4>Summary</h4>
+<h2>&nbsp;</h2>
 {selectedProgram && (
-
+ 
 <>
 
 <div className="os-program">
 
-<img src={prog.icon} width="30" alt="icon"/>
+{/* <img src={prog.icon} width="30" alt="icon"/> */}
 
 <div>
 <div>{prog.name}</div>
@@ -300,12 +300,12 @@ Make Another Payment
 </div>
 
 ))}
-
+<h2>&nbsp;</h2>
 <div className="os-total">
 <span>Total Due</span>
 <strong>₹{total}</strong>
 </div>
-
+<h2>&nbsp;</h2>
 <div className="payment-logos">
 <img src={phonepe} width="35" alt="logo"/>
 <img src={gpay} width="35" alt="logo"/>
