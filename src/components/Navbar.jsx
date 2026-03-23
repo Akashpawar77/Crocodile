@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
-
+import logo from "../../pic/wonder.png";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,7 +17,7 @@ export default function Navbar() {
     { to: "/", label: "Home" },
     { to: "/about", label: "About Us" },
     { to: "/programs", label: "Programs" },
-    { to: "/locate", label: "📍 Locate Us" },
+    { to: "/locate", label: " Locate Us" },
     { to: "/franchises", label: "Franchises" },
     { to: "/contact", label: "Contact" },
   ];
@@ -26,10 +26,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="nav-inner">
         <Link to="/" className="nav-logo" onClick={() => setMenuOpen(false)}>
-          <span className="logo-icon">🐒</span>
-          <span className="logo-text">
-            Monkey <span>Dee</span>
-          </span>
+          <img src={logo} alt="WonderKids Preschool Logo" className="logo-img" />
         </Link>
 
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
@@ -47,18 +44,24 @@ export default function Navbar() {
           ))}
           <li>
             <button
-              className="btn btn-secondary nav-cta"
-              onClick={() => { navigate("/payment"); setMenuOpen(false); }}
+              className="btn  nav-cta"
+              onClick={() => {
+                navigate("/payment");
+                setMenuOpen(false);
+              }}
             >
-              💳 Pay Fees
+              Pay Fee
             </button>
           </li>
           <li>
             <button
               className="btn btn-primary nav-cta"
-              onClick={() => { navigate("/enrollment"); setMenuOpen(false); }}
+              onClick={() => {
+                navigate("/enrollment");
+                setMenuOpen(false);
+              }}
             >
-              Enroll Now 🎉
+              Enroll Now
             </button>
           </li>
         </ul>
@@ -68,7 +71,9 @@ export default function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span /><span /><span />
+          <span />
+          <span />
+          <span />
         </button>
       </div>
     </nav>
