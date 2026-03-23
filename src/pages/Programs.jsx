@@ -1,140 +1,268 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import programs from "../data/programs";
 import "./Programs.css";
 
-function ProgramCard({ program }) {
-  const [hovered, setHovered] = useState(false);
-  const navigate = useNavigate();
-
-  return (
-    <div
-      className={`prog-card ${hovered ? "hovered" : ""}`}
-      style={{ "--pc": program.color, "--pb": program.bg }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <div className="prog-card-top">
-        <div className="prog-emoji">{program.emoji}</div>
-        <div className="prog-spots">
-          <span className={program.spots <= 5 ? "spots-low" : ""}>
-            {program.spots <= 5 ? "⚠️ Only " : "✅ "}{program.spots} spots left
-          </span>
-        </div>
-      </div>
-      <div className="prog-age">{program.age}</div>
-      <h3>{program.title}</h3>
-      <p className="prog-desc">{program.description}</p>
-      <ul className="prog-features">
-        {program.features.map((f) => (
-          <li key={f}><span className="feat-dot" />  {f}</li>
-        ))}
-      </ul>
-      <div className="prog-footer">
-        <div className="prog-schedule">🕐 {program.schedule}</div>
-        <button
-          className="btn btn-primary prog-btn"
-          onClick={() => navigate("/enrollment", { state: { program: program.title } })}
-        >
-          Enroll →
-        </button>
-      </div>
-    </div>
-  );
-}
-
 export default function Programs() {
-  const [filter, setFilter] = useState("all");
-  const ages = ["all", "2-3", "3-4", "4-5", "5-6"];
 
-  const filtered = filter === "all"
-    ? programs
-    : programs.filter(p => p.age.includes(filter.split("-")[0]));
+  const [activeProgram, setActiveProgram] = useState(null);
+  const [selectedClass, setSelectedClass] = useState("Playgroup");
+
+  const programContent = {
+
+    Playgroup: {
+      age: "2–3 Years",
+      duration: "2 Hours / Day",
+      description:
+        "The Playgroup program introduces toddlers to a joyful and secure learning environment where they begin their first steps into education. Through playful activities, music, storytelling and sensory experiences, children build confidence and develop early social skills.",
+      highlights: [
+        "Interactive storytelling sessions",
+        "Music and rhythm activities",
+        "Creative art exploration",
+        "Sensory and motor skill development"
+      ],
+      learning: [
+        "Language development",
+        "Emotional bonding",
+        "Social interaction",
+        "Curiosity and exploration"
+      ]
+    },
+
+    Nursery: {
+      age: "3–4 Years",
+      duration: "3 Hours / Day",
+      description:
+        "Nursery helps children transition from playful learning to structured education. The curriculum introduces early language and number skills while encouraging creativity and social interaction.",
+      highlights: [
+        "English readiness program",
+        "Basic mathematics concepts",
+        "Creative arts and crafts",
+        "Storytelling and imagination building"
+      ],
+      learning: [
+        "Communication skills",
+        "Social and emotional growth",
+        "Cognitive development",
+        "Creative expression"
+      ]
+    },
+
+    "Junior KG": {
+      age: "4–5 Years",
+      duration: "3 Hours / Day",
+      description:
+        "Junior KG builds strong academic and creative foundations. Children explore phonics, numbers, and logical thinking while participating in engaging group activities.",
+      highlights: [
+        "Phonics based language learning",
+        "Mathematical thinking activities",
+        "Art and performance sessions",
+        "Group learning exercises"
+      ],
+      learning: [
+        "Logical reasoning",
+        "Confidence building",
+        "Creative thinking",
+        "Team collaboration"
+      ]
+    },
+
+    "Senior KG": {
+      age: "5–6 Years",
+      duration: "4 Hours / Day",
+      description:
+        "Senior KG prepares children for primary school with a balanced approach to academics and creativity. Students strengthen reading, writing, and numeracy skills while developing independence.",
+      highlights: [
+        "Advanced phonics learning",
+        "Writing and comprehension",
+        "Mathematical reasoning",
+        "Creative problem solving"
+      ],
+      learning: [
+        "School readiness",
+        "Leadership skills",
+        "Independent thinking",
+        "Confidence and communication"
+      ]
+    }
+  };
+
+  const content = programContent[selectedClass];
 
   return (
-    <div className="programs-page">
+    <div className="programs-section">
 
-      <section className="programs-hero">
-        <span className="pill-label">🎒 Our Programs</span>
-        <h1>Find the Perfect Program <span>for Your Child</span></h1>
-        <p>Six thoughtfully designed programs for children aged 2–6, each one a unique adventure.</p>
-      </section>
+      <div className="programs-container">
 
-      <section className="section">
-        <div className="section-inner">
-          <div className="filter-bar">
-            <span className="filter-label">Filter by age:</span>
-            {ages.map(a => (
+        <h2 className="programs-title">
+          Our Programmes
+        </h2>
+
+        {/* CLASS SELECTOR */}
+
+        <div className="program-tabs">
+          {Object.keys(programContent).map((cls) => (
+            <button
+              key={cls}
+              className={selectedClass === cls ? "active-tab" : ""}
+              onClick={() => setSelectedClass(cls)}
+            >
+              {cls}
+            </button>
+          ))}
+        </div>
+
+
+        {/* PROGRAM INFORMATION */}
+
+        <div className="program-info">
+
+          <h3>{selectedClass}</h3>
+
+          <div className="info-strip">
+
+            <div>
+              <p>Age</p>
+              <h4>{content.age}</h4>
+            </div>
+
+            <div>
+              <p>Duration</p>
+              <h4>{content.duration}</h4>
+            </div>
+
+          </div>
+
+          <p className="program-desc">{content.description}</p>
+
+          <div className="info-grid">
+
+            <div className="info-box">
+              <h4>Program Highlights</h4>
+              <ul>
+                {content.highlights.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="info-box">
+              <h4>Learning Outcomes</h4>
+              <ul>
+                {content.learning.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        {/* PROGRAM CARDS */}
+
+       <div className="programs-grid">
+
+      {programs.map((prog) => (
+        <div
+      key={prog.id}
+      className="program-card"
+      onClick={() => {
+        setSelectedClass(prog.title);
+        setActiveProgram(prog);
+      }}
+      >
+
+      <img
+        src={prog.image}
+        alt={prog.title}
+        className="program-img"
+      />
+
+      <div className="program-bottom">
+
+        <h3>{prog.title}</h3>
+
+        {/* <button
+          className="plus-btn"
+          onClick={(e) => {
+            e.setActiveProgram();
+            // e.stopPropagation(); 
+            // setActiveProgram(prog);
+            // setSelectedClass(prog.title);
+          }}
+        > */}
+        {Object.keys(programContent).map((cls) => (
+            <button
+              key={cls}
+              className={selectedClass === prog.title ? "active-tab" : ""}
+              onClick={() => setSelectedClass(prog.title)}
+            >
+              
+        </button>
+          ))}
+         
+
+      </div>
+
+    </div>
+  ))}
+
+</div>
+
+      </div>
+
+      
+
+
+      {/* POPUP */}
+
+      {/* {activeProgram && (
+        <div className="program-popup-overlay">
+
+          <div className="program-popup">
+
+            <button
+              className="close-btn"
+              onClick={() => setActiveProgram(null)}
+            >
+              ✕
+            </button>
+
+            <h2>{activeProgram.title}</h2>
+
+            <div className="popup-details">
+
+              <div className="detail">
+                <span>👶</span>
+                <p>{activeProgram.age}</p>
+              </div>
+
+              <div className="detail">
+                <span>📅</span>
+                <p>{activeProgram.days}</p>
+              </div>
+
+              <div className="detail">
+                <span>⏰</span>
+                <p>{activeProgram.time}</p>
+              </div>
+
+             {Object.keys(programContent).map((cls) => (
               <button
-                key={a}
-                className={`filter-btn ${filter === a ? "active" : ""}`}
-                onClick={() => setFilter(a)}
+                key={cls}
+                className={selectedClass === cls ? "active-tab" : ""}
+                onClick={() => setSelectedClass(cls)}
               >
-                {a === "all" ? "🌈 All Ages" : `Ages ${a}`}
+                {cls}
               </button>
             ))}
+            </div>
+
           </div>
 
-          <div className="programs-grid">
-            {filtered.map(p => <ProgramCard key={p.id} program={p} />)}
-          </div>
         </div>
-      </section>
-
-      {/* COMPARISON */}
-      <section className="section comparison-section">
-        <div className="section-inner">
-          <span className="pill-label">📊 Program Comparison</span>
-          <h2 className="section-title">Quick Comparison</h2>
-          <div className="comparison-table-wrap">
-            <table className="comparison-table">
-              <thead>
-                <tr>
-                  <th>Program</th>
-                  <th>Age</th>
-                  <th>Schedule</th>
-                  <th>Class Size</th>
-                  <th>Focus</th>
-                </tr>
-              </thead>
-              <tbody>
-                {programs.map(p => (
-                  <tr key={p.id}>
-                    <td><span style={{ color: p.color }}>{p.emoji}</span> {p.title}</td>
-                    <td>{p.age}</td>
-                    <td>{p.schedule}</td>
-                    <td>Max {p.spots} children</td>
-                    <td>{p.features[0]}, {p.features[1]}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* PROCESS */}
-      <section className="section process-section">
-        <div className="section-inner">
-          <span className="pill-label">📋 Enrollment Process</span>
-          <h2 className="section-title">How to Enroll in 4 Easy Steps</h2>
-          <div className="process-steps">
-            {[
-              { step: "1", icon: "📝", title: "Fill the Form", desc: "Complete our simple online enrollment form with your child's and parent's details." },
-              { step: "2", icon: "📞", title: "Confirmation Call", desc: "Our team will call you within 24 hours to confirm the application and discuss your child's needs." },
-              { step: "3", icon: "🏫", title: "School Tour", desc: "Schedule a free tour of our facilities to meet the teachers and explore the classrooms." },
-              { step: "4", icon: "🎉", title: "Welcome Aboard!", desc: "Complete enrollment paperwork and prepare for your child's first amazing day at Monkey Dee!" },
-            ].map((s) => (
-              <div key={s.step} className="process-step">
-                <div className="step-number">{s.step}</div>
-                <div className="step-icon">{s.icon}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      )} */}
 
     </div>
   );

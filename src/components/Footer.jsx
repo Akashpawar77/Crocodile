@@ -1,57 +1,100 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+  FaEnvelope,
+} from "react-icons/fa";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Subscribed Successfully 🎉");
+    setEmail("");
+  };
+
   return (
     <footer className="footer">
-      <div className="footer-inner">
+      <div className="footer-container">
+        {/* BRAND */}
         <div className="footer-brand">
-          <div className="footer-logo">🐒 <span>Monkey Dee</span></div>
-          <p>Where little minds bloom into brilliant futures. Play, learn, and grow with us every day!</p>
-          <div className="social-links">
-            {["📘 Facebook", "📸 Instagram", "🐦 Twitter", "▶️ YouTube"].map((s, i) => (
-              <a key={i} href="#!" className="social-btn">{s}</a>
-            ))}
+          <h2>Monkey Dee</h2>
+          <p>
+            Where little minds grow through play, creativity, and joyful
+            learning every day.
+          </p>
+
+          <form className="newsletter" onSubmit={handleSubmit}>
+            <FaEnvelope />
+            <input
+              type="email"
+              placeholder="Enter email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button>Subscribe</button>
+          </form>
+        </div>
+
+        {/* LINKS */}
+        <div className="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/programs">Programs</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* PROGRAMS */}
+        <div className="footer-col">
+          <h3>Programs</h3>
+          <ul>
+            <li>Tiny Explorers</li>
+            <li>Little Builders</li>
+            <li>Creative Stars</li>
+            <li>Kindergarten Prep</li>
+          </ul>
+        </div>
+
+        {/* CONTACT */}
+        {/* CONTACT - Updated social section */}
+        <div className="footer-col">
+          <h3>Contact</h3>
+          <p>123 Sunshine Lane</p>
+          <p>(555) 123-4567</p>
+          <p>hello@monkeedee.com</p>
+
+          <div className="social">
+            <a href="#" aria-label="Facebook">
+              <FaFacebookF />
+            </a>
+            <a href="#" aria-label="Instagram">
+              <FaInstagram />
+            </a>
+            <a href="#" aria-label="YouTube">
+              <FaYoutube />
+            </a>
           </div>
-        </div>
-
-        <div className="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            {[["Home", "/"], ["About Us", "/about"], ["Programs", "/programs"], ["Enrollment", "/enrollment"], ["Locate Us", "/locate"], ["Franchises", "/franchises"], ["Pay Fees", "/payment"], ["Contact", "/contact"]].map(([label, to]) => (
-              <li key={to}><Link to={to}>{label}</Link></li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="footer-col">
-          <h4>Programs</h4>
-          <ul>
-            {["Tiny Explorers (2–3)", "Little Builders (3–4)", "Creative Stars (4–5)", "Kindergarten Prep (5–6)", "After-School Club", "Weekend Workshop"].map((p) => (
-              <li key={p}><Link to="/programs">{p}</Link></li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="footer-col">
-          <h4>Contact Us</h4>
-          <ul className="contact-list">
-            <li>📍 123 Sunshine Lane, Kidsville, CA 90210</li>
-            <li>📞 (555) 123-4567</li>
-            <li>✉️ hello@monkeedee.com</li>
-            <li>🕐 Mon–Fri: 7 AM – 6 PM</li>
-          </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} Monkey Dee Preschool. Made with ❤️ for tiny learners.</p>
-        <div className="footer-badges">
-          <span>🏫 Licensed Preschool</span>
-          <span>⭐ NAEYC Accredited</span>
-          <span>🔒 Safe & Secure</span>
-        </div>
+        © {new Date().getFullYear()} Monkey Dee Preschool
       </div>
     </footer>
   );

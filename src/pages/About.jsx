@@ -1,139 +1,262 @@
 import React from "react";
 import "./About.css";
+import ab from "../../pic/about1.png";
 
 const values = [
-  { emoji: "💛", title: "Joy First", color: "#FFBE0B", desc: "Learning should be fun! We design every activity to spark delight and excitement in every child." },
-  { emoji: "🤝", title: "Community", color: "#3A86FF", desc: "We are more than a school — we are a family. Every child, parent, and teacher belongs here." },
-  { emoji: "🌱", title: "Growth Mindset", color: "#06D6A0", desc: "We celebrate effort over results, encouraging children to embrace challenges and learn from mistakes." },
-  { emoji: "🧩", title: "Inclusion", color: "#8338EC", desc: "Every child is unique and valued. Our programs celebrate diversity and accommodate every learner." },
-  { emoji: "🔍", title: "Curiosity", color: "#FB5607", desc: "We nurture a love of questions, exploration, and discovery that lasts a lifetime." },
-  { emoji: "🛡️", title: "Safety", color: "#FF6B6B", desc: "Physical and emotional safety is our foundation. Every child thrives when they feel secure and loved." },
+{ emoji: "💛", title: "Learner Centric", color: "#FFBE0B",
+desc: "We place every child at the centre of learning. Our teaching approach adapts to the needs, curiosity, and interests of each learner." },
+
+{ emoji: "🤝", title: "Community", color: "#3A86FF",
+desc: "We believe education grows stronger with collaboration between teachers, parents, and the community." },
+
+{ emoji: "🌱", title: "Continuous Growth", color: "#06D6A0",
+desc: "Children learn best when encouraged to explore, experiment, and grow with confidence every day." },
+
+{ emoji: "🧩", title: "Innovation in Learning", color: "#8338EC",
+desc: "Our modern iCan Learning System prepares children to succeed in a fast-changing world through creativity and critical thinking." }
 ];
 
 const curriculum = [
-  { icon: "📖", title: "Language & Literacy", desc: "Phonics, storytelling, and vocabulary through songs, books, and creative writing." },
-  { icon: "🔢", title: "Math & Logic", desc: "Counting, patterns, shapes, and early algebra through games and manipulatives." },
-  { icon: "🔬", title: "Science & Discovery", desc: "Hands-on experiments, nature exploration, and the scientific method." },
-  { icon: "🎨", title: "Arts & Expression", desc: "Painting, sculpture, drama, and music to foster creativity and self-expression." },
-  { icon: "🧘", title: "Social-Emotional", desc: "Feelings vocabulary, empathy, conflict resolution, and mindfulness." },
-  { icon: "🏃", title: "Physical Development", desc: "Gross and fine motor skills through outdoor play, yoga, and manipulative activities." },
+{ icon:"📖", title:"Language & Literacy", desc:"Phonics, storytelling, and vocabulary through songs, books, and creative writing." },
+{ icon:"🔢", title:"Math & Logic", desc:"Counting, patterns, shapes, and early algebra through games and manipulatives." },
+{ icon:"🔬", title:"Science & Discovery", desc:"Hands-on experiments, nature exploration, and the scientific method." },
+{ icon:"🎨", title:"Arts & Expression", desc:"Painting, sculpture, drama, and music to foster creativity and self-expression." }
 ];
 
 const team = [
-  { name: "Ms. Sandra Rivera", role: "Founder & Principal", emoji: "👩‍💼", exp: "22 years", degree: "M.Ed Early Childhood" },
-  { name: "Mr. David Kim", role: "Lead Educator – Pre-K", emoji: "👨‍🏫", exp: "14 years", degree: "B.Ed Child Development" },
-  { name: "Ms. Aisha Johnson", role: "Art & Music Director", emoji: "👩‍🎨", exp: "10 years", degree: "B.A Fine Arts Education" },
-  { name: "Ms. Priya Patel", role: "STEM Coordinator", emoji: "👩‍🔬", exp: "8 years", degree: "M.S. Education & STEM" },
+{ name:"Ms. Sandra Rivera", role:"Founder & Principal", emoji:"👩‍💼", exp:"22 years", degree:"M.Ed Early Childhood" },
+{ name:"Mr. David Kim", role:"Lead Educator – Pre-K", emoji:"👨‍🏫", exp:"14 years", degree:"B.Ed Child Development" },
+{ name:"Ms. Aisha Johnson", role:"Art & Music Director", emoji:"👩‍🎨", exp:"10 years", degree:"B.A Fine Arts Education" },
+{ name:"Ms. Priya Patel", role:"STEM Coordinator", emoji:"👩‍🔬", exp:"8 years", degree:"M.S. Education & STEM" }
 ];
 
-export default function About() {
-  return (
-    <div className="about-page">
+export default function About(){
+return(
 
-      {/* HERO */}
-      <section className="about-hero">
-        <div className="about-hero-inner">
-          <span className="pill-label">🐒 About Monkey Dee</span>
-          <h1>A School Built on <span>Love</span> & <span>Learning</span></h1>
-          <p>
-            Since 2010, Monkey Dee Preschool has been the heart of early childhood education in
-            our community — a joyful, safe, and creative space where children aged 2–6 become the
-            best version of themselves.
-          </p>
-        </div>
-        <div className="about-hero-imgs">
-          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&q=80" alt="kids learning" className="about-img-main" />
-          <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=300&q=80" alt="outdoor play" className="about-img-small" />
-        </div>
-      </section>
+<div className="about-page">
 
-      {/* MISSION */}
-      <section className="section mission-section">
-        <div className="section-inner mission-grid">
-          <div className="mission-text">
-            <span className="pill-label">🎯 Our Mission</span>
-            <h2>Empowering Every Child to Shine</h2>
-            <p>
-              Our mission is to provide an inclusive, stimulating, and joyful learning environment
-              where every child is seen, heard, and celebrated. We partner with families to nurture
-              the whole child — academically, socially, emotionally, and physically.
-            </p>
-            <p>
-              We believe childhood is not a race — it is a rich, irreplaceable season of wonder.
-              Our job is to protect that wonder while gently guiding children toward their fullest potential.
-            </p>
-            <div className="mission-stats">
-              <div className="m-stat"><strong>98%</strong><span>Kindergarten Readiness Rate</span></div>
-              <div className="m-stat"><strong>4.9★</strong><span>Average Parent Rating</span></div>
-              <div className="m-stat"><strong>12:1</strong><span>Child-to-Teacher Ratio</span></div>
-            </div>
-          </div>
-          <div className="mission-visual">
-            <img src="https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?w=500&q=80" alt="story time" />
-          </div>
-        </div>
-      </section>
+{/* HERO */}
+<div className="about-header">
+  <h1>About Us</h1>
+</div>
+<section className="about-hero">
 
-      {/* VALUES */}
-      <section className="section values-section">
-        <div className="section-inner">
-          <span className="pill-label">💫 Our Values</span>
-          <h2 className="section-title">What We Stand For</h2>
-          <p className="section-subtitle">Six core values guide everything we do — from curriculum design to how we speak with children every day.</p>
-          <div className="values-grid">
-            {values.map((v) => (
-              <div key={v.title} className="value-card" style={{ "--vc": v.color }}>
-                <div className="value-emoji">{v.emoji}</div>
-                <h3>{v.title}</h3>
-                <p>{v.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+<div className="hero-text">
 
-      {/* CURRICULUM */}
-      <section className="section curriculum-section">
-        <div className="section-inner">
-          <span className="pill-label">📚 Our Curriculum</span>
-          <h2 className="section-title">Holistic, Play-Based Learning</h2>
-          <p className="section-subtitle">Our curriculum covers all developmental domains through play, projects, and purposeful exploration.</p>
-          <div className="curriculum-grid">
-            {curriculum.map((c) => (
-              <div key={c.title} className="curriculum-item">
-                <div className="curriculum-icon">{c.icon}</div>
-                <div>
-                  <h4>{c.title}</h4>
-                  <p>{c.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* TEAM */}
-      <section className="section team-section">
-        <div className="section-inner">
-          <span className="pill-label">👩‍🏫 Meet the Team</span>
-          <h2 className="section-title">Passionate, Qualified Educators</h2>
-          <p className="section-subtitle">Our teachers are not just educators — they are champions of childhood.</p>
-          <div className="grid-4">
-            {team.map((t) => (
-              <div key={t.name} className="team-card">
-                <div className="team-avatar">{t.emoji}</div>
-                <h3>{t.name}</h3>
-                <p className="team-role">{t.role}</p>
-                <div className="team-info">
-                  <span>🎓 {t.degree}</span>
-                  <span>⏱️ {t.exp} exp.</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-    </div>
-  );
+<h2>A School Built on <span>Love</span> & <span>Learning</span></h2>
+
+<p>
+At Monkey Dee Preschool, we believe childhood is a time of wonder Where Little Minds Grow for Big Dreams, curiosity, 
+and joyful discovery.
+Since 2010, we have been nurturing young learners in a safe, playful,
+and caring environment where every child feels confident to explore the world around them.
+It is a joyful home for early childhood learning in our community.
+</p>
+
+<p>
+At Monkey Dee, children aged 2–6 explore, play, discover,
+ and learn in a warm and nurturing environment designed especially for young minds.
+ Every smile, question, and small achievement is celebrated, 
+ helping each child grow into their happiest and most confident self.
+</p>
+<p>Our approach has always been learner-centric and forward-thinking.
+ Over the years, we have continuously evolved our teaching methods to provide 
+ meaningful preschool, playschool, nursery, and kindergarten experiences that
+  inspire curiosity and creativity.</p>
+
+
+</div>
+
+
+</section>
+
+{/* MISSION */}
+
+<section className="section mission">
+
+<div className="mission-grid">
+
+<div className="mission-text">
+
+<h2>Empowering Every Child to Shine</h2>
+
+<p>
+Our mission is to create a safe, joyful, and inspiring learning 
+environment where every child feels valued, confident, and excited to learn.
+We believe childhood is a beautiful journey of discovery. Through play-based learning,
+creative exploration, and caring guidance from our educators, children develop the
+confidence to express themselves, the curiosity to ask questions, and the courage to try new things.
+</p>
+<p>At Monkey Dee Preschool, every child is seen, heard, and celebrated, helping them build the 
+  foundation for a lifetime of learning and happiness.</p>
+
+<div className="mission-stats">
+
+<div className="stat">
+<strong>98%</strong>
+<span>Kindergarten Readiness Rate</span>
+</div>
+
+<div className="stat">
+<strong>4.9★</strong>
+<span>Average Parent Rating</span>
+</div>
+
+</div>
+
+</div>
+
+<div className="mission-img">
+<img src={ab} alt="story time" className="bounce-img"/>
+</div>
+
+</div>
+
+</section>
+
+{/* JOURNEY */}
+
+<section className="section journey">
+<div className="ab-blobs">
+          <div className="ab-blob ab-blob1" />
+          <div className="ab-blob ab-blob2" />
+        </div>
+<h2 className="new-title">Our Journey</h2>
+
+<p className="section-subtitle">
+A journey of nurturing young minds and building a joyful learning community.
+</p>
+
+<div className="timeline">
+
+<div className="timeline-item">
+<div className="year">2010</div>
+<h4>School Founded</h4>
+<p>Monkey Dee Preschool opened its doors with a vision to create a joyful learning environment.</p>
+</div>
+
+<div className="timeline-item">
+<div className="year">2015</div>
+<h4>Program Expansion</h4>
+<p>We expanded our programs to support toddlers, preschoolers, and kindergarten learners.</p>
+</div>
+
+<div className="timeline-item">
+<div className="year">2020</div>
+<h4>iCan Learning System</h4>
+<p>Our new age curriculum introduced creativity, innovation, and future-ready skills.</p>
+</div>
+
+<div className="timeline-item">
+<div className="year">2024</div>
+<h4>500+ Graduates</h4>
+<p>More than 500 children have grown and graduated from Monkey Dee Preschool.</p>
+</div>
+
+</div>
+
+</section>
+
+{/* VALUES */}
+
+<section className="section values">
+
+<h2 className="new1-title">What We Stand For</h2>
+
+<p className="section-subtitle">
+Our philosophy is built on values that inspire learning,
+creativity, and growth for every child.
+</p>
+
+<div className="values-grid">
+
+{values.map(v =>(
+
+<div key={v.title} className="value-card" style={{borderTop:`6px solid ${v.color}`}}>
+
+<div className="emoji">{v.emoji}</div>
+
+<h3>{v.title}</h3>
+
+<p>{v.desc}</p>
+
+</div>
+
+))}
+
+</div>
+
+</section>
+
+{/* TEAM */}
+
+<section className="section team">
+
+<h2 className="new2-title">Meet the Team</h2>
+
+<p className="section-subtitle">
+Passionate educators dedicated to nurturing every child.
+</p>
+
+<div className="team-grid">
+
+{team.map(t =>(
+
+<div key={t.name} className="team-card">
+
+<div className="avatar">{t.emoji}</div>
+
+<h3>{t.name}</h3>
+
+<p className="role">{t.role}</p>
+
+<div className="info">
+<span>🎓 {t.degree}</span>
+<span>⏱ {t.exp} experience</span>
+</div>
+
+</div>
+
+))}
+
+</div>
+
+</section>
+
+{/* CURRICULUM */}
+
+<section className="section curriculum">
+
+<h2 className="new3-title">Holistic, Play-Based Learning</h2>
+
+<p className="section-subtitle">
+Our curriculum covers all developmental domains through play,
+projects, and purposeful exploration.
+</p>
+
+<div className="curriculum-grid">
+
+{curriculum.map(c =>(
+
+<div key={c.title} className="curriculum-card">
+
+<div className="icon">{c.icon}</div>
+
+<h4>{c.title}</h4>
+
+<p>{c.desc}</p>
+
+</div>
+
+))}
+
+</div>
+
+</section>
+
+</div>
+
+);
 }
