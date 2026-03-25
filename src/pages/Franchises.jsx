@@ -56,7 +56,7 @@ export default function Franchises() {
         </div>
         <div className="fh-content">
           <h1 className="pill-access"> Franchise Opportunities</h1>
-          <h2>Own a <span>Monkey Dee</span> Preschool in Your Community</h2>
+          <h2>Own a <span>Wonder Kids</span> Preschool in Your Community</h2>
           <p>
             Join our award-winning franchise network and bring joyful, high-quality early
             childhood education to families near you — with full training, support, and a
@@ -136,7 +136,7 @@ export default function Franchises() {
 
 <section className="why-section">
 
-<h2>Why Choose Monkey-Dee Franchise</h2>
+<h2>Why Choose Wonder Kids Franchise</h2>
 
 <p className="why-desc">
 Are you driven by the passion of making a positive difference in the lives of children?

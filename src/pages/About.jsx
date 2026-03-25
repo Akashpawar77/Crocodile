@@ -48,7 +48,7 @@ return(
 <h2>A School Built on <span>Love</span> & <span>Learning</span></h2>
 
 <p>
-At Monkey Dee Preschool, we believe childhood is a time of wonder Where Little Minds Grow for Big Dreams, curiosity, 
+At Wonder Kids Preschool, we believe childhood is a time of wonder Where Little Minds Grow for Big Dreams, curiosity, 
 and joyful discovery.
 Since 2010, we have been nurturing young learners in a safe, playful,
 and caring environment where every child feels confident to explore the world around them.
@@ -56,7 +56,7 @@ It is a joyful home for early childhood learning in our community.
 </p>
 
 <p>
-At Monkey Dee, children aged 2–6 explore, play, discover,
+At Wonder Kids, children aged 2–6 explore, play, discover,
  and learn in a warm and nurturing environment designed especially for young minds.
  Every smile, question, and small achievement is celebrated, 
  helping each child grow into their happiest and most confident self.
@@ -89,7 +89,7 @@ We believe childhood is a beautiful journey of discovery. Through play-based lea
 creative exploration, and caring guidance from our educators, children develop the
 confidence to express themselves, the curiosity to ask questions, and the courage to try new things.
 </p>
-<p>At Monkey Dee Preschool, every child is seen, heard, and celebrated, helping them build the 
+<p>At Wonder Kids Preschool, every child is seen, heard, and celebrated, helping them build the 
   foundation for a lifetime of learning and happiness.</p>
 
 <div className="mission-stats">
@@ -134,7 +134,7 @@ A journey of nurturing young minds and building a joyful learning community.
 <div className="timeline-item">
 <div className="year">2010</div>
 <h4>School Founded</h4>
-<p>Monkey Dee Preschool opened its doors with a vision to create a joyful learning environment.</p>
+<p>Wonder Kids Preschool opened its doors with a vision to create a joyful learning environment.</p>
 </div>
 
 <div className="timeline-item">
@@ -152,7 +152,7 @@ A journey of nurturing young minds and building a joyful learning community.
 <div className="timeline-item">
 <div className="year">2024</div>
 <h4>500+ Graduates</h4>
-<p>More than 500 children have grown and graduated from Monkey Dee Preschool.</p>
+<p>More than 500 children have grown and graduated from Wonder Kids Preschool.</p>
 </div>
 
 </div>

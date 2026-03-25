@@ -7,7 +7,7 @@
 }
 
 .enrollment-hero h1 {
-  font-family: 'Fredoka One', cursive;
+  font-family: "monospace", cursive;
   font-size: clamp(2rem, 4vw, 3rem);
   color: #1a1a2e;
   margin: 12px 0 16px;
@@ -95,7 +95,7 @@
 .form-step { animation: fadeUp 0.4s ease; }
 
 .step-title {
-  font-family: 'Fredoka One', cursive;
+  font-family: "monospace", cursive;
   font-size: 1.4rem;
   color: #1a1a2e;
   margin-bottom: 24px;
@@ -222,7 +222,7 @@
 }
 
 .sidebar-card h4 {
-  font-family: 'Fredoka One', cursive;
+  font-family: "monospace", cursive;
   font-size: 1rem;
   color: #1a1a2e;
   margin-bottom: 10px;
@@ -261,7 +261,7 @@
 .modal-confetti { font-size: 2rem; margin-bottom: 12px; letter-spacing: 4px; animation: bounce 1s ease infinite; }
 
 .modal-box h2 {
-  font-family: 'Fredoka One', cursive;
+  font-family:"monospace", cursive;
   font-size: 2rem;
   color: #1a1a2e;
   margin-bottom: 10px;

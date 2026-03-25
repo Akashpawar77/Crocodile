@@ -185,7 +185,7 @@ export default function Home() {
       <section className="demosection">
         <div className="section-inner">
           {/* <span className="pill-label">📸 School Life</span> */}
-          <h2 className="section-title">A Day at Monkey Dee</h2>
+          <h2 className="section-title">A Day at Wonder Kids</h2>
           
           <div className="gallery-grid">
             {[
@@ -224,7 +224,7 @@ export default function Home() {
       <div className="cta-on">
         <div className="cta-content">
           {/* <div className="cta-emoji">🐒</div> */}
-          <h2>Ready to Join the Monkey Dee Family?</h2>
+          <h2>Ready to Join the Wonder Kids Family?</h2>
           <p>secure your child's place in our award-winning preschool today!</p>
           <div className="cta-buttons">
             <Link to="/enrollment" className="btn btn-primary">Enroll Now 🎉</Link>

@@ -211,7 +211,7 @@ alt="qr"
 </div>
 
 <div className="upi-id">
-UPI ID : <b>monkeydee@upi</b>
+UPI ID : <b>wonderkids@upi</b>
 </div>
 
 </div>

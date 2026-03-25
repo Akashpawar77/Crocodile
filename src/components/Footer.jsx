@@ -22,7 +22,7 @@ export default function Footer() {
       <div className="footer-container">
         {/* BRAND */}
         <div className="footer-brand">
-          <h2>Monkey Dee</h2>
+          <h2>Wonder Kids</h2>
           <p>
             Where little minds grow through play, creativity, and joyful
             learning every day.
@@ -77,7 +77,7 @@ export default function Footer() {
           <h3>Contact</h3>
           <p>123 Sunshine Lane</p>
           <p>(555) 123-4567</p>
-          <p>hello@monkeedee.com</p>
+          <p>hello@wonderkids.com</p>
 
           <div className="social">
             <a href="#" aria-label="Facebook">
@@ -94,7 +94,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        © {new Date().getFullYear()} Monkey Dee Preschool
+        © {new Date().getFullYear()} Wonder Kids Preschool
       </div>
     </footer>
   );

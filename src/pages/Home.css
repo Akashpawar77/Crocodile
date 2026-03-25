@@ -86,7 +86,6 @@
 .hero-content {
   flex: 1;
   max-width: 560px;
-
   opacity: 0;
   transform: translateY(30px);
   transition: all .8s ease;

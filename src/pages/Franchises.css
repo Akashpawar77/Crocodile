@@ -21,7 +21,7 @@
 .fh-content { flex: 1; max-width: 560px; position: relative; z-index: 1; animation: fadeUp 0.7s ease; }
 
 .fh-content h1 {
-  font-family: 'Fredoka One', cursive;
+  font-family: "monospace", cursive;
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   color: #1a1a2e;
   margin: 12px 0 18px;
@@ -37,7 +37,6 @@
 .fh-visual { flex: 1; max-width: 480px; position: relative; z-index: 1; animation: fadeUp 0.7s 0.2s ease both; }
 .fh-visual img { 
   width: 100%; 
-
   border-radius: 50px; 
   box-shadow: 0 30px 80px rgba(0,0,0,0.12); 
   aspect-ratio: 4/3; 
@@ -124,8 +123,8 @@ margin-bottom:10px;
 
 .tier-top { text-align: center; margin-bottom: 18px; }
 .tier-emoji { font-size: 2.6rem; display: block; margin-bottom: 8px; }
-.tier-top h3 { font-family: 'Fredoka One', cursive; font-size: 1.3rem; color: #1a1a2e; margin-bottom: 10px; }
-.tier-price { font-family: 'Fredoka One', cursive; font-size: 2.4rem; color: var(--tc); }
+.tier-top h3 { font-family: "monospace", cursive; font-size: 1.3rem; color: #1a1a2e; margin-bottom: 10px; }
+.tier-price { font-family: "monospace", cursive; font-size: 2.4rem; color: var(--tc); }
 .tier-sub { font-size: 0.78rem; color: #888; font-weight: 700; }
 
 .tier-meta { background: #FAFAFA; border-radius: 12px; padding: 12px 16px; margin-bottom: 18px; }
@@ -171,7 +170,7 @@ margin-bottom:10px;
   border-radius: 50%;
   background: #FFBE0B;
   color: #1a1a2e;
-  font-family: 'Fredoka One', cursive;
+  font-family: "monospace", cursive;
   font-size: 1rem;
   display: flex;
   align-items: center;
@@ -193,7 +192,7 @@ margin-bottom:10px;
 }
 
 .inquiry-text h2 {
-  font-family: 'Fredoka One', cursive;
+  font-family: "monospace", cursive;
   font-size: 1.8rem;
   color: white;
   margin: 12px 0 16px;
@@ -211,7 +210,7 @@ margin-bottom:10px;
 }
 
 .inquiry-form-wrap h3 {
-  font-family: 'Fredoka One', cursive;
+  font-family: "monospace", cursive;
   font-size: 1.4rem;
   color: #1a1a2e;
   margin-bottom: 22px;
@@ -224,7 +223,7 @@ margin-bottom:10px;
   padding: 40px 20px;
 }
 
-.sent-box h3 { font-family: 'Fredoka One', cursive; font-size: 1.6rem; color: #1a1a2e; margin-bottom: 12px; }
+.sent-box h3 { font-family: "monospace", cursive; font-size: 1.6rem; color: #1a1a2e; margin-bottom: 12px; }
 .sent-box p { color: #555; margin-bottom: 24px; line-height: 1.6; }
 
 /* FAQ */

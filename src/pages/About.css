@@ -1,6 +1,6 @@
 .about-page {
     padding-top: 70px;
-    font-family: "Poppins", Arial, sans-serif;
+    font-family: "monospace", cursive;
     background: linear-gradient(180deg, #fffdf7, #ffffff, #f7fbff);
 }
 .ab-blobs { position: absolute; inset: 0; pointer-events: none; }

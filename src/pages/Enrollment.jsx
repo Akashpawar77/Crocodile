@@ -66,7 +66,7 @@ export default function Enrollment() {
     <div className="enrollment-page">
 
       <section className="enrollment-hero">
-        <h1>Join the <span>Monkey Dee</span> Family!</h1>
+        <h1>Join the <span>Wonder Kids</span> Family!</h1>
         <p>Complete the form below and our team will contact you within 24 hours.</p>
       </section>
 
@@ -78,7 +78,7 @@ export default function Enrollment() {
 
           <form className="enrollment-form" onSubmit={handleSubmit}>
 
-            <h3 className="step-title">👩 Parent / Guardian Information</h3>
+            <h3 className="step-title">Parent / Guardian Information</h3>
 
             <div className="grid-2">
 
@@ -159,24 +159,24 @@ export default function Enrollment() {
           <div className="enrollment-sidebar">
 
             <div className="sidebar-card">
-              <h4>🕐 Office Hours</h4>
+              <h4>Office Hours</h4>
               <p>Mon–Fri: 7:30 AM – 6:00 PM</p>
               <p>Saturday: 9:00 AM – 1:00 PM</p>
             </div>
 
             <div className="sidebar-card">
-              <h4>📞 Need Help?</h4>
+              <h4>Need Help?</h4>
               <p>(555) 123-4567</p>
-              <p>hello@monkeedee.com</p>
+              <p>hello@wonderkids.com</p>
             </div>
 
             <div className="sidebar-card highlight-card">
-              <h4>✨ Why Enroll Early?</h4>
+              <h4>Why Enroll Early?</h4>
               <ul>
-                <li>🎯 Secure your preferred program</li>
-                <li>📋 Early enrollment discount</li>
-                <li>👩‍🏫 Meet your child's teacher</li>
-                <li>🏫 Free orientation session</li>
+                <li>Secure your preferred program</li>
+                <li>Early enrollment discount</li>
+                <li>Meet your child's teacher</li>
+                <li>Free orientation session</li>
               </ul>
             </div>
 

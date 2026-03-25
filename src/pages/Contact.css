@@ -131,7 +131,7 @@
 }
 
 .contact-form h3, .sent-confirmation h3 {
-  font-family: 'Fredoka One', cursive;
+  font-family: "monospace", cursive;
   font-size: 1.4rem;
   color: #1a1a2e;
   margin-bottom: 24px;
