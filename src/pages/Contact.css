@@ -30,6 +30,7 @@
   padding:40px;
   border-radius:14px;
   box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  text-align: start;
 }
 
 .contact-info h3{
@@ -102,21 +103,7 @@
 
 /* SOCIAL COLORS */
 
-.facebook{
-  background:#1877f2;
-}
 
-.instagram{
-  background:#e4405f;
-}
-
-.twitter{
-  background:#1da1f2;
-}
-
-.youtube{
-  background:#ff0000;
-}
 
 .social-pill:hover{
   transform:translateY(-2px);
@@ -131,7 +118,7 @@
 }
 
 .contact-form h3, .sent-confirmation h3 {
-  font-family: "monospace", cursive;
+  font-family: 'monospace', cursive;
   font-size: 1.4rem;
   color: #1a1a2e;
   margin-bottom: 24px;
@@ -157,12 +144,14 @@
 .map-section{
   background:#f6f8fc;
   padding:80px 20px;
+  
 }
 
 .section-title{
   text-align:center;
   font-size:38px;
   margin-bottom:50px;
+
   color:#222;
 }
 
@@ -268,4 +257,7 @@
   }
 }
 
-/* FAQ */
+
+
+
+

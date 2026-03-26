@@ -47,6 +47,7 @@ const [step,setStep] = useState(1);
 const [selectedProgram,setSelectedProgram] = useState(null);
 const [payMethod,setPayMethod] = useState("phonepe");
 const [time,setTime] = useState(300);
+const [showQR,setShowQR] = useState(false); // ✅ NEW STATE
 
 const programs = PLANS[0].programs;
 
@@ -183,7 +184,10 @@ Continue to Payment →
 <button
 key={m.id}
 className={`method-btn ${payMethod===m.id?"active":""}`}
-onClick={()=>setPayMethod(m.id)}
+onClick={()=>{
+  setPayMethod(m.id);
+  setShowQR(true); // ✅ SHOW QR ON CLICK
+}}
 >
 
 <img src={m.icon} width="35" alt="method"/>
@@ -195,6 +199,8 @@ onClick={()=>setPayMethod(m.id)}
 
 </div>
 
+{/* ✅ CONDITIONAL QR DISPLAY */}
+{showQR && (
 <div className="upi-qr-box">
 
 <div className="qr-header">
@@ -202,12 +208,7 @@ Scan using PhonePe / Google Pay / Paytm
 </div>
 
 <div className="qr-code">
-
-<img
-src={qr}
-alt="qr"
-/>
-
+<img src={qr} alt="QR Code" width="180"/>
 </div>
 
 <div className="upi-id">
@@ -215,12 +216,16 @@ UPI ID : <b>wonderkids@upi</b>
 </div>
 
 </div>
+)}
 
 <div className="step-nav">
 
 <button
 className="btn btn-secondary"
-onClick={()=>setStep(1)}
+onClick={()=>{
+  setStep(1);
+  setShowQR(false); // reset
+}}
 >
 Back
 </button>
@@ -258,6 +263,7 @@ onClick={()=>{
 setStep(1);
 setSelectedProgram(null);
 setTime(300);
+setShowQR(false); // reset
 }}
 >
 Make Another Payment
@@ -275,13 +281,12 @@ Make Another Payment
 
 <h4>Summary</h4>
 <h2>&nbsp;</h2>
+
 {selectedProgram && (
- 
+
 <>
 
 <div className="os-program">
-
-{/* <img src={prog.icon} width="30" alt="icon"/> */}
 
 <div>
 <div>{prog.name}</div>
@@ -300,12 +305,16 @@ Make Another Payment
 </div>
 
 ))}
+
 <h2>&nbsp;</h2>
+
 <div className="os-total">
 <span>Total Due</span>
 <strong>₹{total}</strong>
 </div>
+
 <h2>&nbsp;</h2>
+
 <div className="payment-logos">
 <img src={phonepe} width="35" alt="logo"/>
 <img src={gpay} width="35" alt="logo"/>
