@@ -39,28 +39,42 @@ export default function Enrollment() {
     setFields({ ...fields, [key]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    e.preventDefault();
+  const errs = validate(fields);
+  setErrors(errs);
 
-    const errs = validate(fields);
+  if (Object.keys(errs).length !== 0) return;
 
-    setErrors(errs);
+  try {
+    const res = await fetch("http://localhost:5000/api/enrollment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: fields.parentFirstName + " " + fields.parentLastName,
+        email: fields.email,
+        phone: fields.phone,
+        program: fields.relationship, // you can change later
+      }),
+    });
 
-    if (Object.keys(errs).length === 0) {
+    const data = await res.json();
+    console.log("Response:", data);
 
-      const existing = JSON.parse(localStorage.getItem("monkey_dee_enrollments") || "[]");
-
-      localStorage.setItem(
-        "monkey_dee_enrollments",
-        JSON.stringify([...existing, { ...fields, id: Date.now() }])
-      );
-
-      alert("Information submitted successfully 🎉");
-
+    if (res.ok) {
+      alert("Enrollment submitted successfully 🎉");
       setFields(INITIAL);
+    } else {
+      alert("Failed to submit");
     }
-  };
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Server error");
+  }
+};
 
   return (
     <div className="enrollment-page">

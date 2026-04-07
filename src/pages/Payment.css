@@ -377,3 +377,46 @@
     text-align: center;
     margin-top: 6px;
 }
+/* Fix oversized image */
+.program-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+/* Center main layout */
+.payment-main {
+    width: 100%;
+}
+
+/* Better button */
+.btn-primary {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Method text */
+.method-btn span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Smooth hover */
+.prog-select-card {
+    transition: all 0.3s ease;
+}
+.input-field {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.input-field:focus {
+    border-color: #3a86ff;
+    box-shadow: 0 0 0 2px rgba(58, 134, 255, 0.2);
+}

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { Bus, ParkingCircle, Trees, Hospital, Navigation } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Bus, ParkingCircle, Trees, Hospital, Navigation } from "lucide-react";
 import "./Contact.css";
 
 export default function Contact() {
@@ -17,28 +16,53 @@ export default function Contact() {
   const handleChange = (k) => (e) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (form.name && form.email && form.message) {
-      setSent(true);
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
+
+    if (!form.name || !form.email || !form.phone || !form.message) {
+      alert("Please fill all required fields");
+      return;
+    }
+
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          message: form.message,
+        }),
       });
+
+      const data = await res.json();
+      console.log("Response:", data);
+
+      if (res.ok) {
+        setSent(true);
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        alert(data.message || "Failed to send message");
+      }
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      alert("Server error");
     }
   };
 
   return (
     <div className="contact-page">
-
-      {/* CONTACT SECTION */}
       <section className="section">
         <div className="section-inner contact-grid">
-
-          {/* INFO */}
           <div className="contact-info">
             <h3>Get in Touch</h3>
 
@@ -80,7 +104,6 @@ export default function Contact() {
             ))}
           </div>
 
-          {/* FORM */}
           <div className="contact-form-wrap">
             {sent ? (
               <div className="sent-confirmation pop-in">
@@ -117,9 +140,7 @@ export default function Contact() {
                   </div>
 
                   <div className="form-group">
-                    <label className="form-label">
-                      Email Address *
-                    </label>
+                    <label className="form-label">Email Address *</label>
                     <input
                       type="email"
                       className="form-input"
@@ -133,15 +154,14 @@ export default function Contact() {
 
                 <div className="grid-2">
                   <div className="form-group">
-                    <label className="form-label">
-                      Phone (optional)
-                    </label>
+                    <label className="form-label">Phone *</label>
                     <input
                       type="tel"
                       className="form-input"
                       placeholder="(555) 000-0000"
                       value={form.phone}
                       onChange={handleChange("phone")}
+                      required
                     />
                   </div>
 
@@ -161,7 +181,9 @@ export default function Contact() {
                         "Programs",
                         "Other",
                       ].map((s) => (
-                        <option key={s}>{s}</option>
+                        <option key={s} value={s}>
+                          {s}
+                        </option>
                       ))}
                     </select>
                   </div>
@@ -190,7 +212,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* MAP SECTION */}
       <section className="section map-section">
         <div className="section-inner">
           <h2 className="section-title">Visit Our Campus</h2>
@@ -239,7 +260,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

@@ -75,7 +75,7 @@ export default function Home() {
             and connection.
           </p> */}
           <div className="hero-actions">
-           <Link to="/enrollment" className="btn btn-primary">
+           <Link to="/enrollment" className="btn primary-btn">
             🎉 Enroll Your Child
           </Link>
             <Link to="/programs" className="btn btn-secondary" >

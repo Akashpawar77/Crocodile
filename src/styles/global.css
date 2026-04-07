@@ -117,12 +117,15 @@ body {
 }
 .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
 .btn:active { transform: scale(0.97); }
-.btn-primary { background: var(--yellow); color: var(--dark); margin: 20px;}
+.btn-primary { background: var(--yellow); color: var(--dark); margin: 20px; }
 .btn-secondary { background: var(--white); color: var(--dark); box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin: 20px; }
 .btn-purple { background: var(--purple); color: white; }
 .btn-blue { background: var(--blue); color: white; }
 .btn-full { width: 100%; justify-content: center; }
-
+.primary-btn {width: 230px;height: 50px; background: #FFBE0B;
+  color: #1a1a2e;
+  margin: 20px;
+}
 /* ── CARD ── */
 .card {
   background: var(--white);

@@ -8,7 +8,7 @@
   max-width: 1200px;
   margin: auto;
   padding: 70px 0px;
-  text-align: center;
+  text-align: center; 
 }
 
 .section-title {
@@ -424,5 +424,11 @@
   .cta-buttons {
     flex-direction: column;
   }
-
+  /* .primary-btn {
+      width: 230px;
+      height: 50px;
+      background: #FFBE0B;
+      color: #1a1a2e;
+      margin: 20px;
+    } */
 }
