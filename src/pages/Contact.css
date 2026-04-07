@@ -1,0 +1,271 @@
+.contact-page { padding-top: 80px; }
+
+.contact-hero {
+  background: linear-gradient(135deg, #EEF4FF 0%, #F5EEFF 100%);
+  padding: 80px 24px 60px;
+  text-align: center;
+}
+
+.contact-hero h1 {
+  font-family: 'monospace', cursive;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #1a1a2e;
+  margin: 12px 0 16px;
+}
+
+.contact-hero h1 span { color: #8338EC; }
+.contact-hero p { color: #555; font-size: 1.1rem; max-width: 500px; margin: 0 auto; }
+
+/* CONTACT GRID */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* INFO */
+.contact-info{
+  background:#ffffff;
+  padding:40px;
+  border-radius:14px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.contact-info h3{
+  font-size:28px;
+  margin-bottom:30px;
+  color:#222;
+}
+
+/* INFO ITEM */
+
+.info-item{
+  display:flex;
+  gap:15px;
+  margin-bottom:22px;
+  align-items:flex-start;
+}
+
+.info-icon{
+  background:#eaf4ff;
+  color:#0d6efd;
+  padding:10px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.info-text h4{
+  font-size:18px;
+  margin-bottom:4px;
+  color:#333;
+}
+
+.info-text p{
+  margin:2px 0;
+  color:#666;
+  font-size:14px;
+}
+
+/* SOCIAL SECTION */
+
+.social-section{
+  margin-top:30px;
+}
+
+.social-section h4{
+  margin-bottom:15px;
+  color:#222;
+}
+
+.contact-socials{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* SOCIAL BUTTON */
+
+.social-pill{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 14px;
+  border-radius:30px;
+  font-size:14px;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+/* SOCIAL COLORS */
+
+.facebook{
+  background:#1877f2;
+}
+
+.instagram{
+  background:#e4405f;
+}
+
+.twitter{
+  background:#1da1f2;
+}
+
+.youtube{
+  background:#ff0000;
+}
+
+.social-pill:hover{
+  transform:translateY(-2px);
+  opacity:0.9;
+}
+/* FORM */
+.contact-form-wrap {
+  background: white;
+  border-radius: 24px;
+  padding: 36px 32px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.07);
+}
+
+.contact-form h3, .sent-confirmation h3 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.4rem;
+  color: #1a1a2e;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 2.5px solid #F0F0F0;
+}
+
+.sent-confirmation {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.sent-emoji {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 16px;
+  animation: bounce 1.5s ease infinite;
+}
+
+.sent-confirmation p { color: #555; margin-bottom: 28px; font-size: 1rem; }
+
+/* MAP */
+.map-section{
+  background:#f6f8fc;
+  padding:80px 20px;
+}
+
+.section-title{
+  text-align:center;
+  font-size:38px;
+  margin-bottom:50px;
+  color:#222;
+}
+
+/* CARD */
+
+.map-card{
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  background:#fff;
+  padding:40px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* LEFT SIDE */
+
+.map-left{
+  flex:1;
+}
+
+.map-icon{
+  width:55px;
+  height:55px;
+  background:#eaf4ff;
+  color:#0d6efd;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+
+.map-left h3{
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.campus-address{
+  font-weight:600;
+  color:#444;
+  margin-bottom:10px;
+}
+
+.map-desc{
+  color:#666;
+  margin-bottom:20px;
+}
+
+/* BUTTON */
+
+.map-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 18px;
+  background:#0d6efd;
+  color:white;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.map-btn:hover{
+  background:#084ec1;
+}
+
+/* RIGHT SIDE */
+
+.map-right{
+  flex:1;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.landmark-card{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px;
+  border-radius:10px;
+  background:#f5f7fb;
+}
+
+.landmark-icon{
+  background:#eaf4ff;
+  color:#0d6efd;
+  padding:8px;
+  border-radius:8px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+  .map-card{
+    flex-direction:column;
+  }
+
+  .map-right{
+    grid-template-columns:1fr;
+  }
+}
+
+/* FAQ */

@@ -1,0 +1,162 @@
+
+.logo-img {
+  height: 90px;
+  width: auto;
+ 
+  object-fit: contain;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 16px 24px;
+  
+  transition:
+    background 0.3s,
+    box-shadow 0.3s,
+    padding 0.3s;
+}
+
+.navbar.scrolled {
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 10px 24px;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  animation: wiggle 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+.logo-text {
+  font-family: "Fredoka One", cursive;
+  font-size: 1.6rem;
+  color: #1a1a2e;
+  line-height: 1;
+}
+
+.logo-text span {
+  color: #ffbe0b;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 50px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.nav-links a:hover {
+  background: #fff9e6;
+  color: #ffbe0b;
+}
+
+.nav-links a.active {
+  background: #ffbe0b;
+  color: #1a1a2e;
+}
+
+.nav-cta {
+  padding: 10px 22px !important;
+  font-size: 0.9rem !important;
+  margin-left: 4px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #1a1a2e;
+  border-radius: 3px;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 20px;
+    gap: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+    align-items: stretch;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav-links a {
+    padding: 12px 18px;
+  }
+  .nav-cta {
+    text-align: center;
+    margin-left: 0;
+  }
+}
