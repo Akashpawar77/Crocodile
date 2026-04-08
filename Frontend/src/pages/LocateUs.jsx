@@ -106,22 +106,22 @@ export default function LocateUs() {
       <div className="locate-title">
         <h1><span className="highlight">Locate</span> Our Centers</h1>
         <div className="filter-bar">
-        <select className="btn btn-primary" value={state} onChange={(e)=>setState(e.target.value)}>
+        <select className="btn primary-btn" value={state} onChange={(e)=>setState(e.target.value)}>
           <option value="">Select State</option>
           {states.map((s,i)=>(<option key={i}>{s}</option>))}
         </select>
 
-        <select className="btn btn-primary" value={district} onChange={(e)=>setDistrict(e.target.value)}>
+        <select className="btn primary-btn" value={district} onChange={(e)=>setDistrict(e.target.value)}>
           <option value="">Select District</option>
           {districts.map((d,i)=>(<option key={i}>{d}</option>))}
         </select>
 
-        <select className="btn btn-primary" value={city} onChange={(e)=>setCity(e.target.value)}>
+        <select className="btn primary-btn" value={city} onChange={(e)=>setCity(e.target.value)}>
           <option value="">Select City</option>
           {cities.map((c,i)=>(<option key={i}>{c}</option>))}
         </select>
 
-        <select className="btn btn-primary" value={location} onChange={(e)=>setLocation(e.target.value)}>
+        <select className="btn primary-btn" value={location} onChange={(e)=>setLocation(e.target.value)}>
           <option value="">Select Location</option>
           {locations.map((l,i)=>(<option key={i}>{l}</option>))}
         </select>

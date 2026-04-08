@@ -28,7 +28,8 @@ export default function Payment() {
 
   const [step, setStep] = useState(1);
   const [selectedProgram, setSelectedProgram] = useState(null);
-  const [loading, setLoading] = useState(false);
+const [loading, setLoading] = useState(false);
+  const [paymentData, setPaymentData] = useState(null);
 
   const [formData, setFormData] = useState({
     parentName: "",
@@ -121,6 +122,7 @@ export default function Payment() {
             const data = await verifyRes.json();
 
             if (data.success) {
+              setPaymentData(data.payment);
               setStep(3); // ✅ success screen
             } else {
               alert("Payment verification failed");
@@ -202,7 +204,7 @@ export default function Payment() {
                 </div>
 
                 <button
-                  className="btn btn-primary"
+                  className="btn primary-btn"
                   disabled={!selectedProgram}
                   onClick={() => setStep(2)}
                 >
@@ -248,7 +250,7 @@ export default function Payment() {
                 )}
 
                 <button
-                  className="btn btn-primary"
+                  className="btn primary-btn"
                   onClick={handlePayment}
                   disabled={loading}
                 >
@@ -259,29 +261,68 @@ export default function Payment() {
             )}
 
             {/* STEP 3 */}
-            {step === 3 && (
+{step === 3 && (
               <div className="pay-panel">
+                <div style={{textAlign: 'center', marginBottom: '30px'}}>
+                  <h2 style={{color: '#10b981', marginBottom: '10px'}}>🎉 Payment Successful!</h2>
+                  <div style={{fontSize: '24px', marginBottom: '20px'}}>✅</div>
+                </div>
 
-                <h2>🎉 Payment Successful</h2>
-                <p>{prog?.name}</p>
-                <p>₹{total}</p>
+                {paymentData && (
+                  <div className="payment-details">
+                    <div className="detail-row">
+                      <span>Payment ID:</span>
+                      <strong>{paymentData.paymentId}</strong>
+                    </div>
+                    <div className="detail-row">
+                      <span>Parent:</span>
+                      <strong>{paymentData.parentName}</strong>
+                    </div>
+                    <div className="detail-row">
+                      <span>Student:</span>
+                      <strong>{paymentData.studentName}</strong>
+                    </div>
+                    <div className="detail-row">
+                      <span>Program:</span>
+                      <strong>{paymentData.program}</strong>
+                    </div>
+                    <div className="detail-row">
+                      <span>Amount:</span>
+                      <strong>₹{paymentData.amount}</strong>
+                    </div>
+                    <div className="detail-row">
+                      <span>Date & Time:</span>
+                      <strong>{paymentData.createdAt ? new Date(paymentData.createdAt).toLocaleString('en-IN') : 'Just now'}</strong>
+                    </div>
+                    <div className="detail-row">
+                      <span>Status:</span>
+                      <strong style={{color: '#10b981'}}>✓ Paid</strong>
+                    </div>
+                  </div>
+                )}
 
-                <button
-                  className="btn btn-primary"
-                  onClick={() => {
-                    setStep(1);
-                    setSelectedProgram(null);
-                    setFormData({
-                      parentName: "",
-                      studentName: "",
-                      email: "",
-                      phone: ""
-                    });
-                  }}
-                >
-                  Pay Again
-                </button>
-
+                <div style={{marginTop: '30px', textAlign: 'center'}}>
+                  <p style={{color: '#6b7280', marginBottom: '20px'}}>
+                    Check your email for the official receipt 📧
+                  </p>
+                  <button
+                    className="btn primary-btn"
+                    onClick={() => {
+                      setStep(1);
+                      setSelectedProgram(null);
+                      setFormData({
+                        parentName: "",
+                        studentName: "",
+                        email: "",
+                        phone: ""
+                      });
+                      setPaymentData(null);
+                    }}
+                    style={{maxWidth: '250px'}}
+                  >
+                    Make Another Payment
+                  </button>
+                </div>
               </div>
             )}
 
@@ -296,6 +337,7 @@ export default function Payment() {
               <>
                 <div className="os-program">
                   <span>{prog.name}</span>
+                  <span></span>
                   <strong>₹{prog.price}</strong>
                 </div>
 

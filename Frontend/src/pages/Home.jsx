@@ -227,7 +227,7 @@ export default function Home() {
           <h2>Ready to Join the Wonder Kids Family?</h2>
           <p>secure your child's place in our award-winning preschool today!</p>
           <div className="cta-buttons">
-            <Link to="/enrollment" className="btn btn-primary">Enroll Now 🎉</Link>
+            <Link to="/enrollment" className="btn primary-btn">Enroll Now 🎉</Link>
             <Link to="/contact" className="btn btn-secondary">Schedule a Tour →</Link>
           </div>
         </div>

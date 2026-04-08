@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import programs from "../data/programs";
 import "./Programs.css";
 
@@ -6,6 +7,28 @@ export default function Programs() {
 
   const [activeProgram, setActiveProgram] = useState(null);
   const [selectedClass, setSelectedClass] = useState("Playgroup");
+
+  const location = useLocation();
+
+  // ✅ HANDLE FOOTER LINK CLICK (HASH)
+  useEffect(() => {
+    if (location.hash) {
+      const section = location.hash.replace("#", "");
+
+      if (section === "JuniorKG") {
+        setSelectedClass("Junior KG");
+      } else if (section === "SeniorKG") {
+        setSelectedClass("Senior KG");
+      } else {
+        setSelectedClass(section);
+      }
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  }, [location]);
 
   const programContent = {
 
@@ -98,7 +121,6 @@ export default function Programs() {
         </h2>
 
         {/* CLASS SELECTOR */}
-
         <div className="program-tabs">
           {Object.keys(programContent).map((cls) => (
             <button
@@ -111,9 +133,7 @@ export default function Programs() {
           ))}
         </div>
 
-
         {/* PROGRAM INFORMATION */}
-
         <div className="program-info">
 
           <h3>{selectedClass}</h3>
@@ -158,111 +178,39 @@ export default function Programs() {
 
         </div>
 
-
         {/* PROGRAM CARDS */}
+        <div className="programs-grid">
 
-       <div className="programs-grid">
-
-      {programs.map((prog) => (
-        <div
-      key={prog.id}
-      className="program-card"
-      onClick={() => {
-        setSelectedClass(prog.title);
-        setActiveProgram(prog);
-      }}
-      >
-
-      <img
-        src={prog.image}
-        alt={prog.title}
-        className="program-img"
-      />
-
-      <div className="program-bottom">
-
-        <h3>{prog.title}</h3>
-
-        {/* <button
-          className="plus-btn"
-          onClick={(e) => {
-            e.setActiveProgram();
-            // e.stopPropagation(); 
-            // setActiveProgram(prog);
-            // setSelectedClass(prog.title);
-          }}
-        > */}
-        {Object.keys(programContent).map((cls) => (
-            <button
-              key={cls}
-              className={selectedClass === prog.title ? "active-tab" : ""}
-              onClick={() => setSelectedClass(prog.title)}
+          {programs.map((prog) => (
+            <div
+              key={prog.id}
+              className="program-card"
+              onClick={() => {
+                setSelectedClass(prog.title);
+                setActiveProgram(prog);
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth"
+                });
+              }}
             >
-              
-        </button>
-          ))}
-         
 
-      </div>
+              <img
+                src={prog.image}
+                alt={prog.title}
+                className="program-img"
+              />
 
-    </div>
-  ))}
-
-</div>
-
-      </div>
-
-      
-
-
-      {/* POPUP */}
-
-      {/* {activeProgram && (
-        <div className="program-popup-overlay">
-
-          <div className="program-popup">
-
-            <button
-              className="close-btn"
-              onClick={() => setActiveProgram(null)}
-            >
-              ✕
-            </button>
-
-            <h2>{activeProgram.title}</h2>
-
-            <div className="popup-details">
-
-              <div className="detail">
-                <span>👶</span>
-                <p>{activeProgram.age}</p>
+              <div className="program-bottom">
+                <h3>{prog.title}</h3>
               </div>
 
-              <div className="detail">
-                <span>📅</span>
-                <p>{activeProgram.days}</p>
-              </div>
-
-              <div className="detail">
-                <span>⏰</span>
-                <p>{activeProgram.time}</p>
-              </div>
-
-             {Object.keys(programContent).map((cls) => (
-              <button
-                key={cls}
-                className={selectedClass === cls ? "active-tab" : ""}
-                onClick={() => setSelectedClass(cls)}
-              >
-                {cls}
-              </button>
-            ))}
             </div>
-
-          </div>
+          ))}
 
         </div>
-      )} */}
+
+      </div>
 
     </div>
   );

@@ -20,6 +20,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
+
         {/* BRAND */}
         <div className="footer-brand">
           <h2>Wonder Kids</h2>
@@ -41,38 +42,29 @@ export default function Footer() {
           </form>
         </div>
 
-        {/* LINKS */}
+        {/* QUICK LINKS */}
         <div className="footer-col">
           <h3>Quick Links</h3>
           <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/programs">Programs</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/programs">Programs</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
 
-        {/* PROGRAMS */}
+        {/* ✅ PROGRAM LINKS (FIXED) */}
         <div className="footer-col">
           <h3>Programs</h3>
           <ul>
-            <li>Tiny Explorers</li>
-            <li>Little Builders</li>
-            <li>Creative Stars</li>
-            <li>Kindergarten Prep</li>
+            <li><Link to="/programs#Playgroup">Playgroup</Link></li>
+            <li><Link to="/programs#Nursery">Nursery</Link></li>
+            <li><Link to="/programs#JuniorKG">Junior KG</Link></li>
+            <li><Link to="/programs#SeniorKG">Senior KG</Link></li>
           </ul>
         </div>
 
         {/* CONTACT */}
-        {/* CONTACT - Updated social section */}
         <div className="footer-col">
           <h3>Contact</h3>
           <p>123 Sunshine Lane</p>
@@ -80,17 +72,12 @@ export default function Footer() {
           <p>hello@wonderkids.com</p>
 
           <div className="social">
-            <a href="#" aria-label="Facebook">
-              <FaFacebookF />
-            </a>
-            <a href="#" aria-label="Instagram">
-              <FaInstagram />
-            </a>
-            <a href="#" aria-label="YouTube">
-              <FaYoutube />
-            </a>
+            <a href="#"><FaFacebookF /></a>
+            <a href="#"><FaInstagram /></a>
+            <a href="#"><FaYoutube /></a>
           </div>
         </div>
+
       </div>
 
       <div className="footer-bottom">
